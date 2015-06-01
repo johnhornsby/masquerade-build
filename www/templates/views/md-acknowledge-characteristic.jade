@@ -1,0 +1,17 @@
+.screen.screen-md-acknowledge-characteristic.template(data-navigation-title='')
+  .frame.frame-1
+    section
+      img.title-image.hide(src='img/judge-simple@2x.png')
+      img.title-image.hide(src='img/pretender-simple@2x.png')
+      img.title-image.hide(src='img/non-pretender-simple@2x.png')
+    h3 The characteristic is
+    h2
+    section
+      h4.hide You must judge them
+      h4.hide As the pretender, you must lie lie lie
+      h4.hide As the non-pretender, you must answer the upcoming question honestly
+    .button.button-call-server Ok, I'm Ready
+  .frame.frame-2.frame-waiting
+    section.top-margin-breather
+      h3 Waiting for other Players...
+    canvas#waiting-for-server(width='391px', height='391px')

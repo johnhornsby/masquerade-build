@@ -1,0 +1,40 @@
+.screen.screen-md-enter-answer.template(data-navigation-title='Enter Answer')
+  .frame.frame-1
+    h4 Question
+    h6
+    section
+      .input-container
+        textarea(maxlength='150')
+        .char-count 150
+    section.count-down-wrapper
+      .count-down
+        span Bonus Time
+        svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='44px', height='44px', viewbox='0 0 130 130', enable-background='new 0 0 130 130', xml:space='preserve')
+          g
+            path(fill='white', d='M65,1C29.653,1,1,29.654,1,65.001C1,100.346,29.653,129,65,129c35.347,0,64-28.654,64-63.999C129,29.654,100.347,1,65,1z M65,115.629c-27.918,0-50.63-22.712-50.63-50.628c0-27.918,22.712-50.63,50.63-50.63c27.918,0,50.629,22.712,50.629,50.63C115.629,92.917,92.918,115.629,65,115.629z')
+          path.svg-clock-hand(transform='rotate(180,65,65)', fill='white', d='M65.454,16.047l-1.064,0.043l-5.014,41.512c-0.917,0.706-1.716,1.596-2.33,2.66c-2.52,4.361-1.029,9.941,3.334,12.462c4.362,2.52,9.941,1.027,12.461-3.335c2.326-4.025,1.229-9.081-2.381-11.819L65.454,16.047z')
+          g
+            g
+              path(fill='white', d='M64.999,31.777c-2.225,0-4.024-1.801-4.024-4.025v-5.032c0-2.224,1.8-4.025,4.024-4.025c2.225,0,4.025,1.801,4.025,4.025v5.032C69.024,29.976,67.224,31.777,64.999,31.777z')
+            g
+              path(fill='white', d='M64.999,111.306c-2.225,0-4.024-1.801-4.024-4.026v-5.032c0-2.224,1.8-4.025,4.024-4.025c2.225,0,4.025,1.801,4.025,4.025v5.032C69.024,109.505,67.224,111.306,64.999,111.306z')
+            g
+              path(fill='white', d='M98.223,65c0-2.224,1.802-4.025,4.025-4.025h5.032c2.224,0,4.025,1.801,4.025,4.025c0,2.224-1.802,4.025-4.025,4.025h-5.032C100.024,69.025,98.223,67.223,98.223,65z')
+            g
+              path(fill='white', d='M18.694,65c0-2.224,1.801-4.025,4.024-4.025h5.032c2.224,0,4.025,1.801,4.025,4.025c0,2.224-1.802,4.025-4.025,4.025h-5.032C20.495,69.025,18.694,67.223,18.694,65z')
+        span.count-down-timer 00:00
+    .button.button-next.button-call-server Submit Answer
+  .frame.frame-2.frame-waiting
+    section
+      h3 Enter Answer
+    canvas#waiting-for-server(width='391px', height='391px')
+  //- Help Content Removed For later Use
+  .help-content
+    section
+      h3 THE PRETENDER
+      p
+        | Answer as though you were the real thing. Do not answer with one or two words - a couple of sentences is best. Put yourself in the other kind of person's shoes.
+      h3 THE NON-PRETENDER
+      p
+        | Answer honestly: a couple of sentences is about right. Do not 'show off' in-depth technical skills unless you are playing with others who also know some of the technicalities - just write what you would say to your friends
+  //- End of Help Content

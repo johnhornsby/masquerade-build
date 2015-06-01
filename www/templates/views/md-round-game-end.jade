@@ -1,0 +1,70 @@
+.screen.screen-md-round-game-end.template
+  .frame.frame-1
+    section
+      img.title-image.hide(src='img/roundover-simple@2x.png')
+      img.title-image.hide(src='img/itsallover-simple@2x.png')
+    section
+      h4.text-message
+    section
+      .button.button-next.button-game-over Next
+    section
+      .button.button-next-round.button-call-server Play Again
+    section
+      .button.button-review Review Answers
+    section
+      .button.button-home Main Menu
+  .frame.frame-2
+    section
+      img.title-image(src='img/gameover-simple@2x.png')
+    section
+      h4.text-message Final Scores
+    section
+      table
+        tr
+          td
+            | 1
+            span st
+          td.cell-score 22
+          td.cell-name Steven Goldstone
+        tr
+          td
+            | 2
+            span nd
+          td.cell-score 22
+          td.cell-name Steven Goldstone
+        tr
+          td
+            | 3
+            span rd
+          td.cell-score 22
+          td.cell-name Steven Goldstone
+    section
+      .button.button-next-round.button-call-server Play Again
+    section
+      .button.button-high-scores Scoreboard
+    section
+      .button.button-home Main Menu
+  .frame.frame-3.frame-waiting
+    section
+      h3 Waiting...
+    canvas#waiting-for-server(width='391px', height='391px')
+  .frame.frame-4.conversation-container
+    .question-and-answer
+      section
+        h3.text-question-number Question
+      section
+        h6.text-question-content Question
+      section
+        .bubble.bubble-left
+          svg.bubble-svg(width='300px', height='130px', viewbox='0 0 300 130', xmlns='http://www.w3.org/2000/svg', version='1.1')
+            polygon(transform='translate(300,0) scale(-1,1)', fill='white', stroke='white', stroke-width='4', points='2,2 298,2 298,86 260,86 260,100 226,86 2,86')
+            text(x='15', y='33', fill='#eb5055', font-family='OpenSans-Bold', font-size='20px') A
+            path(transform='translate(5,100) scale(0.23)', fill='white', d='M81.979,81.192c-0.771-0.206-5.551-2.408-2.557-11.512h-0.042c7.806-8.038,14.771-20.979,14.771-33.716c0-19.587-14.024-32.851-29.16-32.851c-15.144,0-29.095,13.264-29.095,32.851c0,12.788,6.933,25.781,14.784,33.8c3.06,8.029-2.381,11.106-3.558,11.428c-19.2,5.258-34.447,16.183-34.447,26.498c0,2.785,0.091,1.1,0,3.865c-0.543,16.592,27.247,15.309,52.465,15.309c25.254,0,51.727-0.03,52.157-15.309c0.078-2.766,0-1.081,0-3.865C117.298,97.062,100.421,86.122,81.979,81.192z')
+          .conversation-copy.text-answer-a Having to do it every day!
+      section
+        .bubble.bubble-right
+          svg.bubble-svg(width='300px', height='130px', viewbox='0 0 300 130', xmlns='http://www.w3.org/2000/svg', version='1.1')
+            polygon(transform='translate(0,0) scale(1,1)', fill='none', stroke='white', stroke-width='4', points='2,2 298,2 298,86 260,86 260,100 226,86 2,86')
+            text(x='15', y='33', fill='white', font-family='OpenSans-Bold', font-size='20px') B
+            path(transform='translate(265,100) scale(0.23)', fill='white', d='M81.979,81.192c-0.771-0.206-5.551-2.408-2.557-11.512h-0.042c7.806-8.038,14.771-20.979,14.771-33.716c0-19.587-14.024-32.851-29.16-32.851c-15.144,0-29.095,13.264-29.095,32.851c0,12.788,6.933,25.781,14.784,33.8c3.06,8.029-2.381,11.106-3.558,11.428c-19.2,5.258-34.447,16.183-34.447,26.498c0,2.785,0.091,1.1,0,3.865c-0.543,16.592,27.247,15.309,52.465,15.309c25.254,0,51.727-0.03,52.157-15.309c0.078-2.766,0-1.081,0-3.865C117.298,97.062,100.421,86.122,81.979,81.192z')
+          .conversation-copy.text-answer-b Having to do it every day!

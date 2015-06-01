@@ -1,0 +1,18 @@
+.screen.screen-md-acknowledge-role.template(data-navigation-title='')
+  .frame.frame-1
+    h2 Hey, 
+    h3 Your role is the
+    img.title-image.hide(src='img/judge-simple@2x.png')
+    img.title-image.hide(src='img/pretender-simple@2x.png')
+    img.title-image.hide(src='img/non-pretender-simple@2x.png')
+    section
+      h4 The Other Players Are
+    section
+      h4.player-2-role
+    section
+      h4.player-3-role
+    .button.button-next Next
+  .frame.frame-2.frame-waiting
+    section.top-margin-breather
+      h3 Judge choosing characteristic...
+    canvas#waiting-for-server(width='391px', height='391px')

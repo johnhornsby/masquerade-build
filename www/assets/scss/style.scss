@@ -1,0 +1,3230 @@
+
+
+@import "animation-mixins";
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+
+                                                                                                          
+RRRRRRRRRRRRRRRRR   EEEEEEEEEEEEEEEEEEEEEE   SSSSSSSSSSSSSSS EEEEEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTTTT
+R::::::::::::::::R  E::::::::::::::::::::E SS:::::::::::::::SE::::::::::::::::::::ET:::::::::::::::::::::T
+R::::::RRRRRR:::::R E::::::::::::::::::::ES:::::SSSSSS::::::SE::::::::::::::::::::ET:::::::::::::::::::::T
+RR:::::R     R:::::REE::::::EEEEEEEEE::::ES:::::S     SSSSSSSEE::::::EEEEEEEEE::::ET:::::TT:::::::TT:::::T
+  R::::R     R:::::R  E:::::E       EEEEEES:::::S              E:::::E       EEEEEETTTTTT  T:::::T  TTTTTT
+  R::::R     R:::::R  E:::::E             S:::::S              E:::::E                     T:::::T        
+  R::::RRRRRR:::::R   E::::::EEEEEEEEEE    S::::SSSS           E::::::EEEEEEEEEE           T:::::T        
+  R:::::::::::::RR    E:::::::::::::::E     SS::::::SSSSS      E:::::::::::::::E           T:::::T        
+  R::::RRRRRR:::::R   E:::::::::::::::E       SSS::::::::SS    E:::::::::::::::E           T:::::T        
+  R::::R     R:::::R  E::::::EEEEEEEEEE          SSSSSS::::S   E::::::EEEEEEEEEE           T:::::T        
+  R::::R     R:::::R  E:::::E                         S:::::S  E:::::E                     T:::::T        
+  R::::R     R:::::R  E:::::E       EEEEEE            S:::::S  E:::::E       EEEEEE        T:::::T        
+RR:::::R     R:::::REE::::::EEEEEEEE:::::ESSSSSSS     S:::::SEE::::::EEEEEEEE:::::E      TT:::::::TT      
+R::::::R     R:::::RE::::::::::::::::::::ES::::::SSSSSS:::::SE::::::::::::::::::::E      T:::::::::T      
+R::::::R     R:::::RE::::::::::::::::::::ES:::::::::::::::SS E::::::::::::::::::::E      T:::::::::T      
+RRRRRRRR     RRRRRRREEEEEEEEEEEEEEEEEEEEEE SSSSSSSSSSSSSSS   EEEEEEEEEEEEEEEEEEEEEE      TTTTTTTTTTT      
+                                                                                                          
+                                                                                                          
+                                                                                                          
+                                                                                                          
+                                                                                                          
+                                                                                                          
+                                                                                                          
+*/
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+
+
+
+/*
+                                                                                                           
+                                                                                                           
+FFFFFFFFFFFFFFFFFFFFFF     OOOOOOOOO     NNNNNNNN        NNNNNNNNTTTTTTTTTTTTTTTTTTTTTTT   SSSSSSSSSSSSSSS 
+F::::::::::::::::::::F   OO:::::::::OO   N:::::::N       N::::::NT:::::::::::::::::::::T SS:::::::::::::::S
+F::::::::::::::::::::F OO:::::::::::::OO N::::::::N      N::::::NT:::::::::::::::::::::TS:::::SSSSSS::::::S
+FF::::::FFFFFFFFF::::FO:::::::OOO:::::::ON:::::::::N     N::::::NT:::::TT:::::::TT:::::TS:::::S     SSSSSSS
+  F:::::F       FFFFFFO::::::O   O::::::ON::::::::::N    N::::::NTTTTTT  T:::::T  TTTTTTS:::::S            
+  F:::::F             O:::::O     O:::::ON:::::::::::N   N::::::N        T:::::T        S:::::S            
+  F::::::FFFFFFFFFF   O:::::O     O:::::ON:::::::N::::N  N::::::N        T:::::T         S::::SSSS         
+  F:::::::::::::::F   O:::::O     O:::::ON::::::N N::::N N::::::N        T:::::T          SS::::::SSSSS    
+  F:::::::::::::::F   O:::::O     O:::::ON::::::N  N::::N:::::::N        T:::::T            SSS::::::::SS  
+  F::::::FFFFFFFFFF   O:::::O     O:::::ON::::::N   N:::::::::::N        T:::::T               SSSSSS::::S 
+  F:::::F             O:::::O     O:::::ON::::::N    N::::::::::N        T:::::T                    S:::::S
+  F:::::F             O::::::O   O::::::ON::::::N     N:::::::::N        T:::::T                    S:::::S
+FF:::::::FF           O:::::::OOO:::::::ON::::::N      N::::::::N      TT:::::::TT      SSSSSSS     S:::::S
+F::::::::FF            OO:::::::::::::OO N::::::N       N:::::::N      T:::::::::T      S::::::SSSSSS:::::S
+F::::::::FF              OO:::::::::OO   N::::::N        N::::::N      T:::::::::T      S:::::::::::::::SS 
+FFFFFFFFFFF                OOOOOOOOO     NNNNNNNN         NNNNNNN      TTTTTTTTTTT       SSSSSSSSSSSSSSS   
+                                                                                                           
+                                                                                                           
+                                                                                                           
+                                                                                                           
+                                                                                                           
+                                                                                                           
+
+FONTS
+______________________________________________________________________
+*/
+@font-face {
+  font-family: OpenSans-Bold;
+  //font-style: normal;
+  //font-weight: 700;
+  src: url('../../fonts/OpenSans-Bold.ttf');
+}
+@font-face {
+  font-family: OpenSans-ExtraBold;
+  //font-style: normal;
+  //font-weight: 800;
+  src: url('../../fonts/OpenSans-ExtraBold.ttf');
+} 
+@font-face {
+
+  font-family: OpenSans-Light;
+  //font-style: normal;
+  //font-weight: 300;
+  src: url('../../fonts/OpenSans-Light.ttf');
+}
+@font-face {
+  font-family: OpenSans-Regular;
+  //font-style: normal;
+  //font-weight: 400;
+  src: url('../../fonts/OpenSans-Regular.ttf');
+}
+@font-face {
+  font-family: OpenSans-Semibold;
+  //font-style: normal;
+  //font-weight: 600;
+  src: url('../../fonts/OpenSans-Semibold.ttf');
+  //src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+                                                                                                                                          
+                                                                                                                                          
+        GGGGGGGGGGGGGEEEEEEEEEEEEEEEEEEEEEENNNNNNNN        NNNNNNNNEEEEEEEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRR   IIIIIIIIII      CCCCCCCCCCCCC
+     GGG::::::::::::GE::::::::::::::::::::EN:::::::N       N::::::NE::::::::::::::::::::ER::::::::::::::::R  I::::::::I   CCC::::::::::::C
+   GG:::::::::::::::GE::::::::::::::::::::EN::::::::N      N::::::NE::::::::::::::::::::ER::::::RRRRRR:::::R I::::::::I CC:::::::::::::::C
+  G:::::GGGGGGGG::::GEE::::::EEEEEEEEE::::EN:::::::::N     N::::::NEE::::::EEEEEEEEE::::ERR:::::R     R:::::RII::::::IIC:::::CCCCCCCC::::C
+ G:::::G       GGGGGG  E:::::E       EEEEEEN::::::::::N    N::::::N  E:::::E       EEEEEE  R::::R     R:::::R  I::::I C:::::C       CCCCCC
+G:::::G                E:::::E             N:::::::::::N   N::::::N  E:::::E               R::::R     R:::::R  I::::IC:::::C              
+G:::::G                E::::::EEEEEEEEEE   N:::::::N::::N  N::::::N  E::::::EEEEEEEEEE     R::::RRRRRR:::::R   I::::IC:::::C              
+G:::::G    GGGGGGGGGG  E:::::::::::::::E   N::::::N N::::N N::::::N  E:::::::::::::::E     R:::::::::::::RR    I::::IC:::::C              
+G:::::G    G::::::::G  E:::::::::::::::E   N::::::N  N::::N:::::::N  E:::::::::::::::E     R::::RRRRRR:::::R   I::::IC:::::C              
+G:::::G    GGGGG::::G  E::::::EEEEEEEEEE   N::::::N   N:::::::::::N  E::::::EEEEEEEEEE     R::::R     R:::::R  I::::IC:::::C              
+G:::::G        G::::G  E:::::E             N::::::N    N::::::::::N  E:::::E               R::::R     R:::::R  I::::IC:::::C              
+ G:::::G       G::::G  E:::::E       EEEEEEN::::::N     N:::::::::N  E:::::E       EEEEEE  R::::R     R:::::R  I::::I C:::::C       CCCCCC
+  G:::::GGGGGGGG::::GEE::::::EEEEEEEE:::::EN::::::N      N::::::::NEE::::::EEEEEEEE:::::ERR:::::R     R:::::RII::::::IIC:::::CCCCCCCC::::C
+   GG:::::::::::::::GE::::::::::::::::::::EN::::::N       N:::::::NE::::::::::::::::::::ER::::::R     R:::::RI::::::::I CC:::::::::::::::C
+     GGG::::::GGG:::GE::::::::::::::::::::EN::::::N        N::::::NE::::::::::::::::::::ER::::::R     R:::::RI::::::::I   CCC::::::::::::C
+        GGGGGG   GGGGEEEEEEEEEEEEEEEEEEEEEENNNNNNNN         NNNNNNNEEEEEEEEEEEEEEEEEEEEEERRRRRRRR     RRRRRRRIIIIIIIIII      CCCCCCCCCCCCC
+                                                                                                                                          
+                                                                                                                                          
+                                                                                                                                          
+                                                                                                                                          
+                                                                                                                                          
+                                                                                                                                          
+                                                                                                                                          
+
+GENERIC
+______________________________________________________________________
+*/
+$color-green: #60bca5;
+$color-red: #eb5055;
+$color-blue:  #449bb5;
+$color-yellow: #ffac35;
+$color-purple: #543c52;
+$color-navy: #3e5667;
+$color-lime: #b3d059;
+$color-beige: #d5c6aa;
+
+.green-background{background-color:$color-green;}
+.green-color{color:$color-green;}
+.red-background{background-color:$color-red;}
+.red-color{color:$color-red;}
+.blue-background{background-color:$color-blue;}
+.blue-color{color:$color-blue;}
+.yellow-background{background-color:$color-yellow;}
+.yellow-color{color:$color-yellow;}
+.purple-background{background-color:$color-purple;}
+.purple-color{color:$color-purple;}
+.navy-background{background-color:$color-navy;}
+.navy-color{color:$color-navy;}
+.navy-background{background-color:$color-lime;}
+.lime-color{color:$color-lime;}
+.navy-background{background-color:$color-beige;}
+.navy-color{color:$color-beige;}
+
+
+body {
+  font-family: OpenSans-Regular;
+  text-transform: uppercase;
+  visibility: hidden;
+  background-color:$color-green;
+  color:white;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
+  &.status-bar-offset{
+    padding-top:20px;
+  }
+
+
+}
+@media all and (min-width:500px){
+  h2{
+    font-size: 36px;
+    font-family: OpenSans-ExtraBold;
+    letter-spacing:0.15em;
+  }
+
+  h3{
+    font-size: 36px;
+    font-family: OpenSans-Light;
+    letter-spacing:0.13em;
+    margin:22px 0px 22px 0px;
+    line-height: 1.2em;
+    &.spanBold {
+      font-family: OpenSans-Bold;
+    }
+  }
+  h4 {
+    font-size: 30px;
+    font-family: OpenSans-Light;
+    letter-spacing:0.15em;
+    margin:10px 0px 10px 0px;
+    line-height: 1.4em;
+    &.spanBold {
+      font-family: OpenSans-Bold;
+    }
+  }
+  h5 {
+    font-size: 20px;
+    font-family: OpenSans-Semibold;
+    margin:5px 5px 5px 5px;
+  }
+  p{
+    font-size: 18px;
+    font-family: OpenSans-Semibold;
+    line-height: 1.4em;
+    letter-spacing:0.1em;
+    text-transform: none;
+  }
+  textarea {
+    font-size:22px;
+    font-family: OpenSans-Bold;
+    text-transform:none;
+    height:180px;
+  }
+  .char-count {
+    font-size:30px;
+  }
+  .button {
+    font-size:18px;
+    letter-spacing: 0.2em;
+  }
+  .ui-table-view-item{
+    font-size: 22px;
+    font-family: OpenSans-Bold;
+    letter-spacing: 0.1em;
+  }
+  input {
+    font-size:22px;
+    font-family: OpenSans-Bold;
+    height:44px;
+    letter-spacing: 0.1em;
+  }
+  .top-margin-breather {
+    margin-top:100px;
+  }
+  .input-container {
+    padding:10px 10px 10px 22px;
+    border:4px solid white;
+    margin:0px 0px 44px 0px;
+
+
+
+  }
+  .title-image img{
+    max-width: 100%;
+  }
+  
+  
+}
+
+@media all and (max-width:499px){
+  h2{
+    font-size: 24px;
+    font-family: OpenSans-ExtraBold;
+  }
+
+  h3{
+    font-size: 22px;
+    letter-spacing:0.08333333333em;
+    font-family: OpenSans-Light;
+    margin:10px 0px 10px 0px;
+    &.spanBold {
+      font-family: OpenSans-Bold;
+    }
+
+  }
+  h4 {
+    font-size: 16px;
+    font-family: OpenSans-ExtraBold;
+    letter-spacing:0.08333333333em;
+    margin:10px 0px 10px 0px;
+    line-height: 1.4em;
+    &.spanBold {
+      font-family: OpenSans-Bold;
+    }
+  }
+  h5 {
+    font-size: 12px;
+    font-family: OpenSans-Bold;
+    margin:5px 5px 5px 5px;
+  }
+  p{
+    font-size: 12px;
+    font-family: OpenSans-Semibold;
+    line-height: 1.4em;
+    letter-spacing:0.15em;
+    text-transform: none;
+  }
+  textarea {
+    font-size:16px;
+    height:130px;
+  }
+  .char-count {
+    font-size:24px;
+  }
+  .button {
+    font-size:11px;
+  }
+  input {
+    font-size:14px;
+    height:20px;
+    letter-spacing: 0.1em;
+    font-family: OpenSans-Bold;
+  }
+  .top-margin-breather {
+    margin-top:10px;
+  }
+  
+  .input-container {
+    padding:10px 10px 10px 22px;
+    border:3px solid white;
+    margin:0px 0px 25px 0px;
+  }
+
+  .title-image img{
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+embed {
+}
+.title-image {
+  width:100%;
+}
+
+textarea, input {
+  -webkit-appearance: none;
+  border:none;
+  background-color:transparent;
+  width:100%;
+  -webkit-text-size-adjust: 100%;
+  text-transform: uppercase;
+  margin: auto;
+  padding: 0px;
+  color: white;
+}
+
+section {
+  width:100%;
+  margin: auto;
+  opacity: 1;
+  //-webkit-transition: height 1000ms  cubic-bezier(0.260, 0.860, 0.440, 0.985), visibility 1000ms cubic-bezier(0.260, 0.860, 0.440, 0.985), opacity 1000ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+}
+
+
+
+#wrapper {
+  -webkit-perspective: 3000px;
+  -webkit-perspective-origin: 50% 50%;
+  width: 100%;
+
+}
+.screen {
+  position: relative;
+  display: block;
+  margin: auto;
+  text-align: center;
+  max-width: 520px;
+  -webkit-transform-style: preserve-3d;
+  //-webkit-animation-fill-mode: both;
+  opacity: 1;
+  /*
+  -webkit-transition: -webkit-transform-origin 500ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
+            -webkit-transform 500ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
+            visibility 500ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
+            opacity 500ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+            */
+
+  &.left-init{
+    -webkit-transform: translate3d(-100%, 0, 0) rotateY(-90deg) translate3d(-100%, 0, 0);
+  }
+  &.left-complete{
+    -webkit-transform: translate3d(0, 0, 0) rotateY(0)
+  }
+  &.out-init{
+    -webkit-transform: translate3d(100%, 0, 0) rotateY(90deg) translate3d(100%, 0, 0);
+  }
+  &.fade-init{
+    opacity: 0;
+  }
+  &.fade-complete{
+    opacity: 1;
+  }
+  &.fade-outro{
+    opacity: 0;
+  }
+  @media all and (min-width:500px){
+    padding: 70px 10px 0px 10px;
+  }
+  @media all and (max-width:499px){
+    padding: 70px 30px 0px 30px;
+  }
+}
+
+.modal{
+  top:0px;
+  left:0px;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  //margin: auto;
+  margin:0;
+  position:fixed;
+  max-width: none;
+  display: none;
+}
+.lightbox-content-container {
+  background-color: black;
+  margin: auto;
+  
+  height: auto;
+  margin-top: 100px;
+  padding: 40px 40px 40px 40px;
+  color: white;
+  @media all and (min-width:500px){
+    padding: 40px 40px 40px 40px;
+    width:440px;
+    h3{
+      margin-bottom: 20px;
+    }
+    h6 {
+      margin-bottom: 20px;
+    }
+  }
+  @media all and (max-width:499px){
+    padding: 30px 30px 30px 30px;
+    //min-width:240px;
+    max-width:240px;
+    h3{
+      margin-bottom: 10px;
+    }
+    h6 {
+      margin-bottom: 10px;
+    }
+  }
+  .button:active {
+    background-color: rgba(255,255,255,0.17) !important;
+    // color: "black" !important;
+  }
+}
+
+.screen-pause {
+  z-index: 2;
+  background-color:rgba(0,0,0,0.7);
+  &.android2 {
+    //margin-left:-5px;
+  }
+}
+
+.screen-alert {
+  z-index: 3;
+  background-color:rgba(0,0,0,0.7);
+  &.android2 {
+    //margin-left:-5px;
+  }
+}
+
+
+
+.help-content{
+  @media all and (min-width:500px){
+    h4{
+
+    }
+  }
+  @media all and (max-width:499px){
+    h4{
+
+    }
+  }
+}
+
+.char-count {
+  text-align: left;
+  font-family: OpenSans-ExtraBold;
+}
+
+
+
+.hide {
+  display: none;
+}
+
+.color-background-floodable{
+  background-color:#5bb9a7;
+  // -webkit-transition: background-color 0.8s linear 0.2s;
+}
+.color-color-floodable{
+  color:#5bb9a7;
+  // -webkit-transition: color 0.8s linear 0.2s;
+}
+
+.color-background-floodable-android2{
+  background-color:#5bb9a7;
+}
+.color-color-floodable-android2{
+  color:#5bb9a7;
+}
+
+.spanBold {
+  font-family: OpenSans-Bold;
+}
+
+.debug-output{
+  position:absolute;
+  top:50px;
+  left:0px;
+  color:black;
+  font-size: 10px;
+  text-transform: none;
+  z-index: 3;
+}
+
+
+figure.button-details {
+  @media all and (min-width:500px){
+    font-size: 13.5px;
+    letter-spacing: 0.15em;
+    width:43%;
+    margin: auto;
+    text-align:center;
+    line-height: 1.9em;
+    margin-bottom: 25px;
+    &:before{
+      content:"";
+      display: block;
+      width: 0; 
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid white;
+      margin:12px 0 12px 50%;
+      left:-8px;
+      position:relative;
+    }
+  }
+  @media all and (max-width:499px){
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    width:80%;
+    margin: auto;
+    text-align:center;
+    line-height: 1.2em;
+    margin-bottom: 20px;
+    &:before{
+      content:"";
+      display: block;
+      width: 0; 
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid white;
+      margin:6px 0 6px 50%;
+      left:-6px;
+      position:relative;
+    }
+  }
+}
+
+.waiting-for-server{
+  .loading {
+    text-align: center;
+    display: none;
+    margin: 100px auto;
+  }
+}
+
+#waiting-for-server {
+  //width:500px;
+  //height:500px;
+  //width:100%;
+  //max-width: 391px;
+  @media all and (min-width:500px){
+    margin: 40px 0px;
+  }
+  @media all and (max-width:499px){
+    margin: 20px 0px;
+  }
+}
+
+
+/*
+ /$$      /$$  /$$$$$$  /$$$$$$ /$$$$$$$$ /$$$$$$ /$$   /$$  /$$$$$$        /$$$$$$$$ /$$$$$$$   /$$$$$$  /$$      /$$ /$$$$$$$$
+| $$  /$ | $$ /$$__  $$|_  $$_/|__  $$__/|_  $$_/| $$$ | $$ /$$__  $$      | $$_____/| $$__  $$ /$$__  $$| $$$    /$$$| $$_____/
+| $$ /$$$| $$| $$  \ $$  | $$     | $$     | $$  | $$$$| $$| $$  \__/      | $$      | $$  \ $$| $$  \ $$| $$$$  /$$$$| $$      
+| $$/$$ $$ $$| $$$$$$$$  | $$     | $$     | $$  | $$ $$ $$| $$ /$$$$      | $$$$$   | $$$$$$$/| $$$$$$$$| $$ $$/$$ $$| $$$$$   
+| $$$$_  $$$$| $$__  $$  | $$     | $$     | $$  | $$  $$$$| $$|_  $$      | $$__/   | $$__  $$| $$__  $$| $$  $$$| $$| $$__/   
+| $$$/ \  $$$| $$  | $$  | $$     | $$     | $$  | $$\  $$$| $$  \ $$      | $$      | $$  \ $$| $$  | $$| $$\  $ | $$| $$      
+| $$/   \  $$| $$  | $$ /$$$$$$   | $$    /$$$$$$| $$ \  $$|  $$$$$$/      | $$      | $$  | $$| $$  | $$| $$ \/  | $$| $$$$$$$$
+|__/     \__/|__/  |__/|______/   |__/   |______/|__/  \__/ \______/       |__/      |__/  |__/|__/  |__/|__/     |__/|________/
+                                                                                                                                
+                                                                                                                                
+_____________________________________________________________________________________________________________________________________________
+*/
+
+.frame-waiting {
+  @media all and (max-width:499px){
+    h3 {
+      margin:10px 10px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+ /$$$$$$$$ /$$$$$$  /$$$$$$$  /$$       /$$$$$$$$
+|__  $$__//$$__  $$| $$__  $$| $$      | $$_____/
+   | $$  | $$  \ $$| $$  \ $$| $$      | $$      
+   | $$  | $$$$$$$$| $$$$$$$ | $$      | $$$$$   
+   | $$  | $$__  $$| $$__  $$| $$      | $$__/   
+   | $$  | $$  | $$| $$  \ $$| $$      | $$      
+   | $$  | $$  | $$| $$$$$$$/| $$$$$$$$| $$$$$$$$
+   |__/  |__/  |__/|_______/ |________/|________/
+                                                                                    
+TABLE START
+_____________________________________________________________________________________________________________________________________________
+*/
+
+table{
+  td{
+    font-family: OpenSans-Light;
+    line-height: 1.2em;
+    letter-spacing:0.15em;
+    text-align: left;
+  }
+  td:nth-child(1){
+    font-family: OpenSans-ExtraBold;
+  }
+  td:nth-child(2), td:nth-child(3){
+    border-left: 4px solid rgba(255,255,255,0.17);
+  }
+  @media all and (min-width:500px){
+    td{
+      font-size: 40px;
+    }
+    td:nth-child(1){
+      span{
+        font-size: 14px;
+        letter-spacing:0.1em;
+      }
+      padding-right:30px;
+    }
+    td:nth-child(2), td:nth-child(3){
+      border-left: 4px solid rgba(255,255,255,0.17);
+      padding-left:30px;
+      font-size: 30px;
+    }
+    td:nth-child(2){
+      padding-right:30px;
+    }
+  }
+  @media all and (max-width:499px){
+    td{
+      font-size: 14px;
+      padding-bottom:5px;
+    }
+    td:nth-child(1){
+      span{
+        font-size: 8px;
+      }
+      padding-right:10px;
+    }
+    td:nth-child(2), td:nth-child(3){
+      border-left: 3px solid rgba(255,255,255,0.17);
+      padding-left:10px;
+    }
+    td:nth-child(2){
+      padding-right:10px;
+    }
+  }
+}
+
+
+
+
+/*
+ /$$   /$$  /$$$$$$  /$$    /$$       /$$$$$$$   /$$$$$$  /$$$$$$$ 
+| $$$ | $$ /$$__  $$| $$   | $$      | $$__  $$ /$$__  $$| $$__  $$
+| $$$$| $$| $$  \ $$| $$   | $$      | $$  \ $$| $$  \ $$| $$  \ $$
+| $$ $$ $$| $$$$$$$$|  $$ / $$/      | $$$$$$$ | $$$$$$$$| $$$$$$$/
+| $$  $$$$| $$__  $$ \  $$ $$/       | $$__  $$| $$__  $$| $$__  $$
+| $$\  $$$| $$  | $$  \  $$$/        | $$  \ $$| $$  | $$| $$  \ $$
+| $$ \  $$| $$  | $$   \  $/         | $$$$$$$/| $$  | $$| $$  | $$
+|__/  \__/|__/  |__/    \_/          |_______/ |__/  |__/|__/  |__/
+                                                                   
+NAV BAR
+_____________________________________________________________________________________________________________________________________________
+*/
+.screen-navigation-bar {
+  width:100%;
+  top:0px;
+  text-align: left;
+  padding:0;
+  max-width: none;
+  z-index: 1;
+  margin: auto;
+  position:fixed;
+  .nav-back {
+    opacity: 0.85;
+    width: 100%;
+    display: block;
+    position:absolute;
+    top:0px;
+    z-index: 0;
+  }
+  .button{
+    background-color:transparent;
+    padding: 0;
+    margin: 0;
+    position:absolute;
+    padding:0px;
+    -webkit-transform: scale(0.8);
+    top:0px;
+    border:0px solid;
+    border-radius:25px;
+    text-decoration: none;
+    z-index: 2;
+    circle {
+      // background-color: rgba(255,255,255,0);
+      opacity:  0.17;
+    }
+    &:active {
+      circle {
+        opacity:  0.5;
+      }
+      border:0px solid rgba(255, 255, 255, 0);
+      background-color: rgba(255,255,255,0);
+      
+    }
+  }
+
+
+  .button-align-left{
+    left:0px;
+  }
+  .button-align-right{
+    right:0px;
+  }
+  header {
+    margin: auto;
+    width:100%;
+    font-family: OpenSans-ExtraBold;
+    text-align: center;
+    position:relative;
+    z-index: 1;
+  }
+  .help {
+    background-color:rgba(0,0,0,0.72);
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    position:absolute;
+    top:0px;
+    left:0px;
+    display: none;
+    .lightbox-content-container {
+      //-width: 410px;
+      margin-top: 100px;
+
+
+    }
+  }
+  .connect-to-server {
+    .loading {
+      text-align: center;
+      display: none;
+      position:absolute;
+      top:50px;
+      left:50%;
+      margin-left:-10px;
+    }
+  }
+  @media all and (min-width:500px){
+    .nav-back {
+      height: 90px;
+    }
+    .button{
+      -webkit-transform: scale(1);
+      margin: 20px;
+    }
+    header{
+      margin-top: 29px;
+    }
+    &.status-bar-offset{
+      .nav-back {
+        height: 110px;
+      }
+      .button{
+        -webkit-transform: scale(1);
+        margin: 40px 20px;
+      }
+      header{
+        margin-top: 48px;
+      }
+    }
+  }
+  @media all and (max-width:499px){
+    .nav-back {
+      height: 60px;
+    }
+    .button{
+      -webkit-transform: scale(0.7);
+      transform: scale(0.7);
+      margin: 0px;
+    }
+    header{
+      margin-top: 19px;
+    }
+    &.status-bar-offset{
+      .nav-back {
+        height: 80px;
+      }
+      .button{
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7);
+        margin: 20px 0px;
+      }
+      header{
+        margin-top: 39px;
+      }
+    }
+  }
+}
+
+
+
+
+/*
+ /$$$$$$$  /$$   /$$ /$$$$$$$$ /$$$$$$$$ /$$$$$$  /$$   /$$
+| $$__  $$| $$  | $$|__  $$__/|__  $$__//$$__  $$| $$$ | $$
+| $$  \ $$| $$  | $$   | $$      | $$  | $$  \ $$| $$$$| $$
+| $$$$$$$ | $$  | $$   | $$      | $$  | $$  | $$| $$ $$ $$
+| $$__  $$| $$  | $$   | $$      | $$  | $$  | $$| $$  $$$$
+| $$  \ $$| $$  | $$   | $$      | $$  | $$  | $$| $$\  $$$
+| $$$$$$$/|  $$$$$$/   | $$      | $$  |  $$$$$$/| $$ \  $$
+|_______/  \______/    |__/      |__/   \______/ |__/  \__/
+                                                           
+BUTTON
+_____________________________________________________________________________________________________________________________________________
+*/
+.button {
+  color: white;
+  display:inline-block;
+  position:relative;
+  font-family: OpenSans-ExtraBold;
+  letter-spacing:0.125em;
+  cursor: pointer;
+  border-radius:100px;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: translate3d(0,0,0);
+  //-webkit-transition: -webkit-transform 0.25s;
+  @media all and (min-width:500px){
+    padding: 22px;
+    margin: 14px;
+    border:4px solid rgba(255, 255, 255, .4);
+    &:active {
+      border:4px solid rgba(255, 255, 255, 1);
+    }
+  }
+  @media all and (max-width:499px){
+    padding: 16px;
+    margin: 10px;
+    border:3px solid rgba(255, 255, 255, .4);
+    &:active {
+      border:3px solid rgba(255, 255, 255, 1);
+    }
+  }
+  &.button-next{
+    background: url(../../img/arrow120x60.png) no-repeat;
+    @media all and (min-width:500px){
+      padding-left:25px;
+      padding-right:70px;
+      background-size: 60px 30px;
+    }
+    @media all and (max-width:499px){
+      padding-left:20px;
+      padding-right:50px;
+      background-size: 40px 20px;
+    }
+    background-position: right center;
+    text-align: left;
+  }
+  &.button-active {
+    background-color: rgba(255,255,255,0.3);
+    color: white;
+    text-indent: -9999px;
+    background-image: url(../../img/ajax_loader.gif);
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &:active {
+    background-color: rgba(0,0,0,0.17);
+    color: white;
+    // text-indent: -9999px;
+    // background-image: url(../../img/ajax_loader.gif);
+    // background-size: 15%;
+    // background-repeat: no-repeat;
+    // background-position: center;
+  }
+}
+
+
+
+
+
+.button-split-group{
+  position:absolute;
+  left:0px;
+
+  @media all and (min-width:500px){
+    //margin:-83px 0px 0px 0px;
+    //margin:22px 14px 14px 0px;
+    height: 70px;
+  }
+  @media all and (max-width:499px){
+    //margin: -47px 0px 0px 0px;
+    height: 49px;
+  }
+  
+  -webkit-transform-origin:50% 50%;
+  -webkit-transform: rotateX(0deg);
+  .button-confirm-yes{
+    background: url(../../img/confirm-yes.svg) no-repeat;
+  }
+  .button-confirm-no{
+    background: url(../../img/confirm-no.svg) no-repeat;
+  }
+  .button-guess-a{
+    background: url(../../img/player-a-red@2x.png) no-repeat;
+    background-position: center;
+    background-color:rgba(255,255,255,1);
+    &.selected{
+      background: url(../../img/player-a@2x.png) no-repeat;
+      background-position: center;
+      @media all and (min-width:500px){
+        background-size: 62px 62px;
+      }
+      @media all and (max-width:499px){
+        background-size: 38px 38px;
+      }
+      background-color:rgba(0,0,0,0.5);
+    }
+  }
+  .button-guess-b{
+    background: url(../../img/player-b@2x.png) no-repeat;
+    &.selected{
+      background-color:rgba(0,0,0,0.5);
+    }
+  }
+  .button{
+    padding:none;
+    background-position: center;
+    
+    display: inline-block;
+    @media all and (min-width:500px){
+      border: 4px solid #FFF;
+      margin:0px 0px !important;
+      height:18px;
+      width:123px !important;
+      background-size: 62px 62px;
+    }
+    @media all and (max-width:499px){
+      border: 3px solid #FFF;
+      margin:0px 0px !important;
+      height:11px;
+      width:74px !important;
+      background-size: 38px 38px;
+    }
+  }
+  :first-child{
+    border-right: none;
+    border-radius: 100px 0px 0px 100px;
+  }
+  :last-child{
+    border-left: none;
+    border-radius: 0px 100px 100px 0px;
+  }
+}
+
+
+
+/*
+ /$$   /$$ /$$$$$$       /$$       /$$$$$$  /$$$$$$  /$$$$$$$$       /$$    /$$ /$$$$$$ /$$$$$$$$ /$$      /$$
+| $$  | $$|_  $$_/      | $$      |_  $$_/ /$$__  $$|__  $$__/      | $$   | $$|_  $$_/| $$_____/| $$  /$ | $$
+| $$  | $$  | $$        | $$        | $$  | $$  \__/   | $$         | $$   | $$  | $$  | $$      | $$ /$$$| $$
+| $$  | $$  | $$        | $$        | $$  |  $$$$$$    | $$         |  $$ / $$/  | $$  | $$$$$   | $$/$$ $$ $$
+| $$  | $$  | $$        | $$        | $$   \____  $$   | $$          \  $$ $$/   | $$  | $$__/   | $$$$_  $$$$
+| $$  | $$  | $$        | $$        | $$   /$$  \ $$   | $$           \  $$$/    | $$  | $$      | $$$/ \  $$$
+|  $$$$$$/ /$$$$$$      | $$$$$$$$ /$$$$$$|  $$$$$$/   | $$            \  $/    /$$$$$$| $$$$$$$$| $$/   \  $$
+ \______/ |______/      |________/|______/ \______/    |__/             \_/    |______/|________/|__/     \__/
+                                                                                                              
+UI LIST VIEW
+_____________________________________________________________________________________________________________________________________________
+*/
+.ui-dropdown {
+  overflow: visible;
+  position:relative;
+  @media all and (min-width:500px){
+    margin:0px 0px 44px 0px;
+  }
+  @media all and (max-width:499px){
+    margin:0px 0px 25px 0px;
+  }
+  .ui-dropdown-input{
+    margin:0px 0px 0px 0px;
+    display: block;
+  }
+  .ui-dropdown-select{
+    display: none;
+    position:absolute;
+    top:0px;
+  }
+}
+
+
+
+
+.ui-table-view{
+  background-color:white;
+  max-height: 272px;
+  overflow: hidden;
+  display: block;
+  position:relative;
+  border: 4px solid white;
+  margin:0px 0px 20px 0px;
+  .ui-table-view-content{
+    position:relative;
+    left:0px;
+    top:0px;
+    .ui-table-view-item{
+      padding: 0;
+      height:auto;
+      display: block;
+      text-align: left;
+      line-height: 24px;
+      a {
+        text-decoration: none;
+        background-color:white;
+        color:#5bb9a7;
+        display: block;
+        margin: 0;
+      }
+      a.selected {
+        background-color:#5bb9a7;
+        color:white;
+      }
+    }
+  }
+  @media all and (min-width:500px){
+    .ui-table-view-item a {
+      padding:22px;
+      font-size: 20px;
+    }
+  }
+  @media all and (max-width:499px){
+    .ui-table-view-item a {
+      padding:10px;
+      font-size: 14px;
+      font-family: OpenSans-Bold;
+    }
+  }
+}
+.thumb-verticle-frame{
+  top:0px;
+  right:0px;
+  height:100%;
+  width:14px;
+  position:absolute;
+  overflow:hidden;
+  .thumb-verticle{
+    width:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    //cursor:pointer;
+    min-height:14px;
+    .thumb-graphics{
+      background-color:black;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      bottom:2px;
+      left:2px;
+      top:2px;
+      right:2px;
+      position:absolute;
+      border:1px solid #CCC;
+      opacity:0.5;
+      -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+                                                                                                                                            
+                                                                                                                                                   
+   SSSSSSSSSSSSSSS         CCCCCCCCCCCCCRRRRRRRRRRRRRRRRR   EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEENNNNNNNN        NNNNNNNN   SSSSSSSSSSSSSSS 
+ SS:::::::::::::::S     CCC::::::::::::CR::::::::::::::::R  E::::::::::::::::::::EE::::::::::::::::::::EN:::::::N       N::::::N SS:::::::::::::::S
+S:::::SSSSSS::::::S   CC:::::::::::::::CR::::::RRRRRR:::::R E::::::::::::::::::::EE::::::::::::::::::::EN::::::::N      N::::::NS:::::SSSSSS::::::S
+S:::::S     SSSSSSS  C:::::CCCCCCCC::::CRR:::::R     R:::::REE::::::EEEEEEEEE::::EEE::::::EEEEEEEEE::::EN:::::::::N     N::::::NS:::::S     SSSSSSS
+S:::::S             C:::::C       CCCCCC  R::::R     R:::::R  E:::::E       EEEEEE  E:::::E       EEEEEEN::::::::::N    N::::::NS:::::S            
+S:::::S            C:::::C                R::::R     R:::::R  E:::::E               E:::::E             N:::::::::::N   N::::::NS:::::S            
+ S::::SSSS         C:::::C                R::::RRRRRR:::::R   E::::::EEEEEEEEEE     E::::::EEEEEEEEEE   N:::::::N::::N  N::::::N S::::SSSS         
+  SS::::::SSSSS    C:::::C                R:::::::::::::RR    E:::::::::::::::E     E:::::::::::::::E   N::::::N N::::N N::::::N  SS::::::SSSSS    
+    SSS::::::::SS  C:::::C                R::::RRRRRR:::::R   E:::::::::::::::E     E:::::::::::::::E   N::::::N  N::::N:::::::N    SSS::::::::SS  
+       SSSSSS::::S C:::::C                R::::R     R:::::R  E::::::EEEEEEEEEE     E::::::EEEEEEEEEE   N::::::N   N:::::::::::N       SSSSSS::::S 
+            S:::::SC:::::C                R::::R     R:::::R  E:::::E               E:::::E             N::::::N    N::::::::::N            S:::::S
+            S:::::S C:::::C       CCCCCC  R::::R     R:::::R  E:::::E       EEEEEE  E:::::E       EEEEEEN::::::N     N:::::::::N            S:::::S
+SSSSSSS     S:::::S  C:::::CCCCCCCC::::CRR:::::R     R:::::REE::::::EEEEEEEE:::::EEE::::::EEEEEEEE:::::EN::::::N      N::::::::NSSSSSSS     S:::::S
+S::::::SSSSSS:::::S   CC:::::::::::::::CR::::::R     R:::::RE::::::::::::::::::::EE::::::::::::::::::::EN::::::N       N:::::::NS::::::SSSSSS:::::S
+S:::::::::::::::SS      CCC::::::::::::CR::::::R     R:::::RE::::::::::::::::::::EE::::::::::::::::::::EN::::::N        N::::::NS:::::::::::::::SS 
+ SSSSSSSSSSSSSSS           CCCCCCCCCCCCCRRRRRRRR     RRRRRRREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEENNNNNNNN         NNNNNNN SSSSSSSSSSSSSSS   
+                                                                                                                                                   
+                                                                                                                                                   
+                                                                                                                                                   
+                                                                                                                                                   
+                                                                                                                                                   
+                                                                                                                                                   
+                                                                                                                                                   
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+*/
+
+
+
+
+
+
+
+
+
+/*
+
+ /$$   /$$  /$$$$$$  /$$      /$$ /$$$$$$$$
+| $$  | $$ /$$__  $$| $$$    /$$$| $$_____/
+| $$  | $$| $$  \ $$| $$$$  /$$$$| $$      
+| $$$$$$$$| $$  | $$| $$ $$/$$ $$| $$$$$   
+| $$__  $$| $$  | $$| $$  $$$| $$| $$__/   
+| $$  | $$| $$  | $$| $$\  $ | $$| $$      
+| $$  | $$|  $$$$$$/| $$ \/  | $$| $$$$$$$$
+|__/  |__/ \______/ |__/     |__/|________/
+                                                    
+HOME START
+_____________________________________________________________________________________________________________________________________________
+*/
+.screen{
+  &.screen-home{
+    max-width: 668px;
+    padding: 147px 10px 0px 10px;
+    
+    // li:nth-child(1){
+    //   -webkit-animation-delay: 0.2s;
+    // }
+    // li:nth-child(2){
+    //   -webkit-animation-delay: 0.3s;
+    // }
+    // li:nth-child(3){
+    //   -webkit-animation-delay: 0.4s;
+    // }
+    // .button{
+      // -webkit-animation-delay:inherit;
+      // -webkit-animation-fill-mode: both;
+    // }
+    // li {
+    //   display: block;
+    // }
+    
+    .image-home-header {
+      overflow: hidden;
+      -webkit-animation-fill-mode: both;
+    }
+    @media all and (min-width:500px){
+      
+      .image-home-header svg {
+        margin-top:0px;
+        width:100%;
+        margin-left:0;
+      }
+      .image-home-header{
+        margin-bottom: 40px;
+      }
+      .button {
+        width:160px;
+      }
+      .visible-for-tablet{
+        display: block;
+      }
+      .visible-for-mobile{
+        display: none;
+      }
+      footer {
+        padding-bottom: 50px;
+      }
+    }
+    @media all and (max-width:499px){
+      padding: 70px 10px 0px 10px;
+      .image-home-header svg{
+        margin-top:0;
+        width:100%;
+        margin-bottom: 35px;
+      }
+      .image-home-header{
+        margin-bottom: 40px;
+      }
+      footer {
+        display: none;
+      }
+      .button {
+        width:100px;
+      }
+      .visible-for-tablet{
+        display: none;
+      }
+      .visible-for-mobile{
+        display: block;
+      }
+    }
+  }
+}
+
+
+
+
+
+/*
+ /$$   /$$ /$$$$$$  /$$$$$$  /$$   /$$        /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$  /$$$$$$$$  /$$$$$$ 
+| $$  | $$|_  $$_/ /$$__  $$| $$  | $$       /$$__  $$ /$$__  $$ /$$__  $$| $$__  $$| $$_____/ /$$__  $$
+| $$  | $$  | $$  | $$  \__/| $$  | $$      | $$  \__/| $$  \__/| $$  \ $$| $$  \ $$| $$      | $$  \__/
+| $$$$$$$$  | $$  | $$ /$$$$| $$$$$$$$      |  $$$$$$ | $$      | $$  | $$| $$$$$$$/| $$$$$   |  $$$$$$ 
+| $$__  $$  | $$  | $$|_  $$| $$__  $$       \____  $$| $$      | $$  | $$| $$__  $$| $$__/    \____  $$
+| $$  | $$  | $$  | $$  \ $$| $$  | $$       /$$  \ $$| $$    $$| $$  | $$| $$  \ $$| $$       /$$  \ $$
+| $$  | $$ /$$$$$$|  $$$$$$/| $$  | $$      |  $$$$$$/|  $$$$$$/|  $$$$$$/| $$  | $$| $$$$$$$$|  $$$$$$/
+|__/  |__/|______/ \______/ |__/  |__/       \______/  \______/  \______/ |__/  |__/|________/ \______/ 
+                                                                                                                                                                                          
+                                                    
+HOME START
+_____________________________________________________________________________________________________________________________________________
+*/
+.screen{
+  &.screen-high-scores{
+
+    @media all and (min-width:500px){
+      max-width: 668px;
+      padding: 95px 10px 0px 10px;
+      table{
+        margin-top:67px;
+      }
+    }
+    @media all and (max-width:499px){
+      padding: 50px 30px 0px 30px;
+      table{
+        margin-top:30px;
+      }
+    }
+  }
+}
+
+
+/*
+HOME END
+______________________________________________________________________________________________
+*/
+
+/*
+ /$$   /$$  /$$$$$$  /$$      /$$       /$$$$$$$$ /$$$$$$        /$$$$$$$  /$$        /$$$$$$  /$$     /$$
+| $$  | $$ /$$__  $$| $$  /$ | $$      |__  $$__//$$__  $$      | $$__  $$| $$       /$$__  $$|  $$   /$$/
+| $$  | $$| $$  \ $$| $$ /$$$| $$         | $$  | $$  \ $$      | $$  \ $$| $$      | $$  \ $$ \  $$ /$$/ 
+| $$$$$$$$| $$  | $$| $$/$$ $$ $$         | $$  | $$  | $$      | $$$$$$$/| $$      | $$$$$$$$  \  $$$$/  
+| $$__  $$| $$  | $$| $$$$_  $$$$         | $$  | $$  | $$      | $$____/ | $$      | $$__  $$   \  $$/   
+| $$  | $$| $$  | $$| $$$/ \  $$$         | $$  | $$  | $$      | $$      | $$      | $$  | $$    | $$    
+| $$  | $$|  $$$$$$/| $$/   \  $$         | $$  |  $$$$$$/      | $$      | $$$$$$$$| $$  | $$    | $$    
+|__/  |__/ \______/ |__/     \__/         |__/   \______/       |__/      |________/|__/  |__/    |__/    
+                                                                                                          
+                                                                                                          
+                                                                                                          
+
+HOW TO PLAY START
+
+_____________________________________________________________________________________________________________________________________________
+*/
+.screen{
+  &.screen-how-to-play{
+    max-width: 668px;
+    
+    padding:70px 0px 0px 0px;
+    a:link, a:hover, a:visited {
+      color: inherit;
+    }
+    p{
+      font-family: OpenSans-Semibold;
+      
+      text-transform: none;
+    }
+    .disclaimer-content {
+      color: black;
+      li{
+        margin-left:1.5em;
+        font-family: inherit;
+      }
+      ul{
+        list-style:disc;
+        font-size: 12px;
+        font-family: OpenSans-Semibold;
+        line-height: 1.4em;
+        letter-spacing: 0.15em;
+      }
+      text-align: left;
+      text-transform: none;
+    }
+
+
+
+    @media all and (min-width:500px){
+      max-width: none !important;
+      .visible-for-tablet{
+        display: block;
+      }
+      .visible-for-mobile{
+        display: none;
+      }
+      .top-content{
+        max-width: 625px;
+        width:100%;
+        margin:auto;
+        p{
+          margin-bottom: 2em;
+          font-size: 18px;
+        }
+        .text-wrapper{
+          margin-top:50px;
+        }
+        .foot-note{
+          font-size: 12px;
+        }
+      }
+      .footer-content{
+        background-color:white;
+        margin: 80px 0px 0px 0px;
+        section{
+          //padding:0px 64px;
+          max-width: none;
+          margin: auto;
+          figure{
+            padding-left:64px;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .disclaimer-content {
+        ul,p{
+          list-style:disc;
+          font-size: 12px;
+          color: #434242;
+          font-family: OpenSans-Semibold;
+          line-height: 1.9em;
+          letter-spacing: 0.075em;
+        }
+        section{
+          padding:10px 64px 30px 64px;
+          width: auto!important;
+          background-color:white;
+        }
+        p{
+          margin-bottom:12px!important;
+        }
+      }
+    }
+    @media all and (max-width:499px){
+      
+      .visible-for-tablet{
+        display: none;
+      }
+      .visible-for-mobile{
+        display: block;
+      }
+      .top-content{
+        margin-top: 40px;
+        margin:auto;
+        .text-wrapper{
+          margin-top:40px;
+          padding: 0px 30px;
+        }
+        p{
+          margin-bottom: 2em;
+        }
+        section{
+          max-width: none;
+        }
+      }
+      .footer-content{
+        background-color:white;
+        margin: 40px 0px 0px 0px;
+        .text-wrapper{
+          margin-top:70px;
+        }
+        section{
+          //max-width: 668px;
+          //margin: auto;
+          //padding:0px 30px;
+        }
+        figure{
+          text-align: left;
+          padding-left: 30px;
+          width:90%;
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .disclaimer-content {
+        //background-color:white;
+        section{
+          padding:0px 30px 20px 30px;
+          width: auto!important;
+          //width:81.25%;
+          background-color:white;
+        }
+        ul,p{
+          font-family: OpenSans-Regular;
+          font-size:12px;
+          margin-bottom:12px!important;
+          list-style:disc;
+          color: #434242;
+          line-height: 1.9em;
+          letter-spacing: 0.15em;
+        }
+      }
+    }
+  }
+}
+
+
+
+/*
+  /$$$$$$  /$$$$$$$$ /$$$$$$$$ /$$$$$$$$ /$$$$$$ /$$   /$$  /$$$$$$   /$$$$$$ 
+ /$$__  $$| $$_____/|__  $$__/|__  $$__/|_  $$_/| $$$ | $$ /$$__  $$ /$$__  $$
+| $$  \__/| $$         | $$      | $$     | $$  | $$$$| $$| $$  \__/| $$  \__/
+|  $$$$$$ | $$$$$      | $$      | $$     | $$  | $$ $$ $$| $$ /$$$$|  $$$$$$ 
+ \____  $$| $$__/      | $$      | $$     | $$  | $$  $$$$| $$|_  $$ \____  $$
+ /$$  \ $$| $$         | $$      | $$     | $$  | $$\  $$$| $$  \ $$ /$$  \ $$
+|  $$$$$$/| $$$$$$$$   | $$      | $$    /$$$$$$| $$ \  $$|  $$$$$$/|  $$$$$$/
+ \______/ |________/   |__/      |__/   |______/|__/  \__/ \______/  \______/ 
+                                                                              
+                                                                             
+SETTINGS START
+_____________________________________________________________________________________________________________________________________________
+*/
+
+.screen{
+  &.screen-settings {
+    .ui-table-view-item a {
+      text-transform: none;
+      font-family: OpenSans-Semibold;
+      border-bottom: 1px dashed
+    }
+    .input-container {
+      textarea {
+        font-size: 12px;
+        font-family: OpenSans-Regular;
+        text-transform:none;
+        max-height: 400px;
+      }
+    }
+
+
+    @media all and (min-width:500px){
+      .button {
+        width:320px;
+        &.button-profile,&.button-language {
+          width:270px;
+        }
+        &.button-character-short {
+          margin-bottom: 5px;
+        }
+        &.button-character-long {
+          margin-top: 5px;
+        }
+      }
+      h5 {
+        letter-spacing: 0.08em;
+        margin-top: 30px;
+      }
+    }
+    @media all and (max-width:499px){
+      .button {
+        width:190px;
+        &.button-profile,&.button-language {
+          width:150px;
+        }
+        &.button-character-short {
+          margin-bottom: 5px;
+        }
+        &.button-character-long {
+          margin-top: 5px;
+        }
+      }
+      h5 {
+        letter-spacing: 0.08em;
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+/*
+ /$$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$$$ /$$$$$$ /$$       /$$$$$$$$
+| $$__  $$| $$__  $$ /$$__  $$| $$_____/|_  $$_/| $$      | $$_____/
+| $$  \ $$| $$  \ $$| $$  \ $$| $$        | $$  | $$      | $$      
+| $$$$$$$/| $$$$$$$/| $$  | $$| $$$$$     | $$  | $$      | $$$$$   
+| $$____/ | $$__  $$| $$  | $$| $$__/     | $$  | $$      | $$__/   
+| $$      | $$  \ $$| $$  | $$| $$        | $$  | $$      | $$      
+| $$      | $$  | $$|  $$$$$$/| $$       /$$$$$$| $$$$$$$$| $$$$$$$$
+|__/      |__/  |__/ \______/ |__/      |______/|________/|________/
+                                                                                             
+                                                  
+PROFILE  START
+______________________________________________________________________________________________
+*/  
+.screen{
+  &.screen-profile{
+    section {
+      position:relative;
+      display: block;
+    }
+    .top-margin-breather {
+      margin-top: 76px;
+    }
+    .ui-dropdown-input.enabled:after{
+      content:"";
+      display: block;
+      width: 0; 
+      height: 0;
+      position:absolute;
+    }
+    @media all and (min-width:500px){
+      .ui-dropdown-input.enabled:after{
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 12px solid white;
+        top:32px;
+        right:28px;
+      }
+    }
+    @media all and (max-width:499px){
+      //padding:70px 10px 0px 10px; 
+      .ui-dropdown-input.enabled:after{
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid white;
+        top:20px;
+        right:20px;
+      }
+    }
+    .privacy-agreement {
+      text-align: left;
+      margin:90px 0px 36px;
+      article {
+        padding-left: 67px;
+        a:link, a:hover, a:visited {
+          color: inherit;
+        }
+        font-family: OpenSans-Semibold;
+        text-transform: none;
+        list-style:disc;
+        font-size: 14px;
+        line-height: 1.9em;
+        letter-spacing: 0.075em;
+      }
+    }
+    .privacy-agreement > input[type='checkbox'] {
+      //opacity: 0;
+      -webkit-appearance:checkbox;
+      float: left;
+      width: 18px;
+      opacity: 0;
+    }
+
+    .privacy-agreement > input[type='checkbox'] + label {
+      //margin: 0;
+      //clear: none;
+      
+      /* Left padding makes room for image */
+      //padding: 5px 0 4px 24px;
+
+      /* Make look clickable because they are */
+      cursor: pointer;
+      width: 47px;
+      height: 47px;
+      display: block;
+      position: absolute;
+      left: 10px;
+      margin-top: 5px;
+        
+      background: url(../../img/check-box-off@2x.png) left center no-repeat;
+      background-size: 100%, 100%;
+    }
+    .privacy-agreement > input[type='checkbox']:checked + label {
+      background: url(../../img/check-box-on@2x.png) left center no-repeat;
+      background-size: 100% 100%;
+    }
+    section:last-child {
+      margin-bottom:40px; 
+    }
+    @media all and (max-width:499px){
+      .privacy-agreement {
+        margin-top: 52px;
+        article {
+          font-family: OpenSans-Regular;
+          letter-spacing: 0.1em;
+          line-height: 1.6em;
+          padding-left:44px;
+        }
+        //letter-spacing: 0.075em;
+      }
+      .privacy-agreement > input[type='checkbox'] + label {
+        left: inherit;
+        width: 44px;
+        height: 44px;
+        background: url(../../img/check-box-off.png) left center no-repeat;
+        background-size: 24px 24px;
+        background-position:left top;
+      }
+      .privacy-agreement > input[type='checkbox']:checked + label {
+        background: url(../../img/check-box-on.png) left center no-repeat;
+        background-size: 24px 24px;
+        background-position:left top;
+      }
+      .top-margin-breather {
+        margin-top:25px;
+        
+      }
+      section:last-child {
+        margin-bottom:40px; 
+      }
+    }
+
+  }
+}
+                                              
+ /*
+PROFILE  END
+______________________________________________________________________________________________
+*/  
+
+
+
+
+
+
+
+
+/*
+  /$$$$$$  /$$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$   /$$  /$$$$$$ 
+ /$$__  $$| $$__  $$|__  $$__/|_  $$_/ /$$__  $$| $$$ | $$ /$$__  $$
+| $$  \ $$| $$  \ $$   | $$     | $$  | $$  \ $$| $$$$| $$| $$  \__/
+| $$  | $$| $$$$$$$/   | $$     | $$  | $$  | $$| $$ $$ $$|  $$$$$$ 
+| $$  | $$| $$____/    | $$     | $$  | $$  | $$| $$  $$$$ \____  $$
+| $$  | $$| $$         | $$     | $$  | $$  | $$| $$\  $$$ /$$  \ $$
+|  $$$$$$/| $$         | $$    /$$$$$$|  $$$$$$/| $$ \  $$|  $$$$$$/
+ \______/ |__/         |__/   |______/ \______/ |__/  \__/ \______/ 
+                                                                    
+                                                                    
+
+CHOOSE A GAME START
+_____________________________________________________________________________________________________________________________________________
+*/
+.screen{
+  &.screen-game-options{
+    .ui-table-view-item a {
+      text-transform: none;
+      font-family: OpenSans-Semibold;
+      border-bottom: 1px dashed
+    }
+    @media all and (min-width:500px){
+      .button {
+        width:200px;
+      }
+    }
+    @media all and (max-width:499px){
+      .button {
+        width:120px;
+      }
+    }
+  }
+}
+
+
+
+/*
+ /$$      /$$ /$$   /$$ /$$    /$$$$$$$$ /$$$$$$       /$$$$$$$  /$$$$$$$$ /$$    /$$ /$$$$$$  /$$$$$$  /$$$$$$$$
+| $$$    /$$$| $$  | $$| $$   |__  $$__/|_  $$_/      | $$__  $$| $$_____/| $$   | $$|_  $$_/ /$$__  $$| $$_____/
+| $$$$  /$$$$| $$  | $$| $$      | $$     | $$        | $$  \ $$| $$      | $$   | $$  | $$  | $$  \__/| $$      
+| $$ $$/$$ $$| $$  | $$| $$      | $$     | $$        | $$  | $$| $$$$$   |  $$ / $$/  | $$  | $$      | $$$$$   
+| $$  $$$| $$| $$  | $$| $$      | $$     | $$        | $$  | $$| $$__/    \  $$ $$/   | $$  | $$      | $$__/   
+| $$\  $ | $$| $$  | $$| $$      | $$     | $$        | $$  | $$| $$        \  $$$/    | $$  | $$    $$| $$      
+| $$ \/  | $$|  $$$$$$/| $$$$$$$$| $$    /$$$$$$      | $$$$$$$/| $$$$$$$$   \  $/    /$$$$$$|  $$$$$$/| $$$$$$$$
+|__/     |__/ \______/ |________/|__/   |______/      |_______/ |________/    \_/    |______/ \______/ |________/
+                                                             
+
+MULTI DEVICE START
+
+_____________________________________________________________________________________________________________________________________________
+*/
+.screen{
+  &.screen-multi-device{
+    .button {
+      width:10.5em;
+    }
+    .input-container{
+      background: url(../../img/person-white.png) no-repeat top left;
+      background-size: contain;
+      position: relative;
+      a.button-profile {
+        background: url(../../img/arrow120x60.png) no-repeat;
+        border: none;
+        border-radius: 0;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        background-size: contain;
+        float: right;
+        background-position: inherit;
+        padding: 0;
+        margin:0;
+      }
+    }
+    @media all and (min-width:500px){
+      .top-margin-breather {
+        margin-top:175px;
+      }
+      .input-container{
+        background-size: 30px 30px;
+        background-position: 17px 17px;
+        padding-left:64px;
+        a.button-profile {
+          width: 64px;
+          height: 64px;
+        }
+      }
+      .button-create {
+        margin-top: 125px;
+      }
+    }
+    @media all and (max-width:499px){
+      .top-margin-breather {
+        margin-top:50px;
+      }
+      .input-container{
+        background-size: 20px 20px;
+        background-position: 10px 10px;
+        padding-left:40px;
+        border: 3px solid white;
+        a.button-profile {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      h3{
+        font-size: 20px;
+        letter-spacing:0.08333333333em;
+        font-family: OpenSans-Light;
+        margin:10px 0px 10px 0px;
+      }
+      .button-create {
+        margin-top: 50px;
+      }
+    }
+  }
+}
+
+/*
+MULTI DEVICE START  END
+______________________________________________________________________________________________
+*/
+
+
+
+
+
+
+
+/*
+ /$$      /$$ /$$$$$$$           /$$$$$  /$$$$$$  /$$$$$$ /$$   /$$        /$$$$$$   /$$$$$$  /$$      /$$ /$$$$$$$$
+| $$$    /$$$| $$__  $$         |__  $$ /$$__  $$|_  $$_/| $$$ | $$       /$$__  $$ /$$__  $$| $$$    /$$$| $$_____/
+| $$$$  /$$$$| $$  \ $$            | $$| $$  \ $$  | $$  | $$$$| $$      | $$  \__/| $$  \ $$| $$$$  /$$$$| $$      
+| $$ $$/$$ $$| $$  | $$            | $$| $$  | $$  | $$  | $$ $$ $$      | $$ /$$$$| $$$$$$$$| $$ $$/$$ $$| $$$$$   
+| $$  $$$| $$| $$  | $$       /$$  | $$| $$  | $$  | $$  | $$  $$$$      | $$|_  $$| $$__  $$| $$  $$$| $$| $$__/   
+| $$\  $ | $$| $$  | $$      | $$  | $$| $$  | $$  | $$  | $$\  $$$      | $$  \ $$| $$  | $$| $$\  $ | $$| $$      
+| $$ \/  | $$| $$$$$$$/      |  $$$$$$/|  $$$$$$/ /$$$$$$| $$ \  $$      |  $$$$$$/| $$  | $$| $$ \/  | $$| $$$$$$$$
+|__/     |__/|_______/        \______/  \______/ |______/|__/  \__/       \______/ |__/  |__/|__/     |__/|________/
+
+MD JOIN GAME START
+_____________________________________________________________________________________________________________________________________________
+*/
+
+
+.screen{
+  &.screen-md-join-game{
+    max-width:600px;
+    .frame-1 {
+      h4{
+        margin-bottom: 4em;
+      }
+    }
+    .frame-1, .frame-2 {
+      .button {
+        width:8em;
+      }
+      .input-container {
+        margin:40px 126px;
+        padding:10px;
+        input {
+          text-align: center;
+          font-size: 60px;
+          height: 76px;
+          letter-spacing: 0.2em;
+        }
+
+        @media all and (max-width:499px){
+          margin:30px auto;
+          max-width: 160px;
+          border: 3px solid white;
+          input {
+            font-size: 36px;
+            height:46px;
+            margin-top:-6px;
+            text-align: center;
+            letter-spacing: 0.1em;
+          }
+        }
+      }
+    }
+    .frame-2 {
+      display: none;
+      h4{
+        margin-bottom: -20px;
+      }
+    }
+  }
+}
+
+
+
+
+/*
+MD JOIN GAME  END
+______________________________________________________________________________________________
+*/
+
+
+
+
+/*
+ /$$      /$$ /$$$$$$$         /$$$$$$   /$$$$$$  /$$   /$$ /$$   /$$  /$$$$$$  /$$      /$$ /$$       /$$$$$$$$ /$$$$$$$   /$$$$$$  /$$$$$$$$       /$$$$$$$   /$$$$$$  /$$       /$$$$$$$$  /$$$$$$ 
+| $$$    /$$$| $$__  $$       /$$__  $$ /$$__  $$| $$  /$$/| $$$ | $$ /$$__  $$| $$  /$ | $$| $$      | $$_____/| $$__  $$ /$$__  $$| $$_____/      | $$__  $$ /$$__  $$| $$      | $$_____/ /$$__  $$
+| $$$$  /$$$$| $$  \ $$      | $$  \ $$| $$  \__/| $$ /$$/ | $$$$| $$| $$  \ $$| $$ /$$$| $$| $$      | $$      | $$  \ $$| $$  \__/| $$            | $$  \ $$| $$  \ $$| $$      | $$      | $$  \__/
+| $$ $$/$$ $$| $$  | $$      | $$$$$$$$| $$      | $$$$$/  | $$ $$ $$| $$  | $$| $$/$$ $$ $$| $$      | $$$$$   | $$  | $$| $$ /$$$$| $$$$$         | $$$$$$$/| $$  | $$| $$      | $$$$$   |  $$$$$$ 
+| $$  $$$| $$| $$  | $$      | $$__  $$| $$      | $$  $$  | $$  $$$$| $$  | $$| $$$$_  $$$$| $$      | $$__/   | $$  | $$| $$|_  $$| $$__/         | $$__  $$| $$  | $$| $$      | $$__/    \____  $$
+| $$\  $ | $$| $$  | $$      | $$  | $$| $$    $$| $$\  $$ | $$\  $$$| $$  | $$| $$$/ \  $$$| $$      | $$      | $$  | $$| $$  \ $$| $$            | $$  \ $$| $$  | $$| $$      | $$       /$$  \ $$
+| $$ \/  | $$| $$$$$$$/      | $$  | $$|  $$$$$$/| $$ \  $$| $$ \  $$|  $$$$$$/| $$/   \  $$| $$$$$$$$| $$$$$$$$| $$$$$$$/|  $$$$$$/| $$$$$$$$      | $$  | $$|  $$$$$$/| $$$$$$$$| $$$$$$$$|  $$$$$$/
+|__/     |__/|_______/       |__/  |__/ \______/ |__/  \__/|__/  \__/ \______/ |__/     \__/|________/|________/|_______/  \______/ |________/      |__/  |__/ \______/ |________/|________/ \______/ 
+                                                                                                                                                                                                      
+    
+MD ACKNOWLEDGE ROLES START                                                                                                                                                                                                 
+ _____________________________________________________________________________________________________________________________________________
+*/
+
+
+.screen{
+  &.screen-md-acknowledge-role{
+    max-width:600px;
+
+    .frame-1 {
+      .top-margin-breather {
+        margin-top:30px;
+      }
+      h3{
+        margin-bottom: 0px;
+      }
+      h4 {
+        margin: 0px 0px;
+      }
+      .title-image {
+        margin:-12px 0px 200px;
+      }
+      section {
+        &:first-of-type {
+          margin-bottom:40px;
+        }
+        &:last-of-type {
+          margin-bottom:40px;
+        }
+      }
+      .button-next {
+        width:110px;
+      }
+    }
+
+    @media all and (max-width:499px){
+      padding: 70px 10px 0px;
+      .frame-1 {
+        .top-margin-breather {
+          margin-top:30px;
+        }
+        h2 {
+          font-size: 1.2em;
+          letter-spacing: 0.1em;
+        }
+        h3{
+          margin-bottom: 0px;
+          font-size: 1.2em;
+          letter-spacing: 0.1em;
+        }
+        h4 {
+          margin: 5px 0px;
+          font-family: OpenSans-Regular;
+        }
+        .title-image {
+          margin:0px 0px 75px;
+        }
+        section {
+          &:first-of-type {
+            margin-bottom:20px;
+          }
+          &:last-of-type {
+            margin-bottom:20px;
+          }
+        }
+        .button-next {
+          width:60px;
+        }
+      }
+    }
+  }
+}
+
+
+/*
+ /$$      /$$ /$$$$$$$         /$$$$$$   /$$$$$$  /$$   /$$ /$$   /$$  /$$$$$$  /$$      /$$ /$$       /$$$$$$$$ /$$$$$$$   /$$$$$$  /$$$$$$$$        /$$$$$$  /$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$$ /$$$$$$$$ /$$$$$$$  /$$$$$$  /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$ 
+| $$$    /$$$| $$__  $$       /$$__  $$ /$$__  $$| $$  /$$/| $$$ | $$ /$$__  $$| $$  /$ | $$| $$      | $$_____/| $$__  $$ /$$__  $$| $$_____/       /$$__  $$| $$  | $$ /$$__  $$| $$__  $$ /$$__  $$ /$$__  $$|__  $$__/| $$_____/| $$__  $$|_  $$_/ /$$__  $$|__  $$__/|_  $$_/ /$$__  $$
+| $$$$  /$$$$| $$  \ $$      | $$  \ $$| $$  \__/| $$ /$$/ | $$$$| $$| $$  \ $$| $$ /$$$| $$| $$      | $$      | $$  \ $$| $$  \__/| $$            | $$  \__/| $$  | $$| $$  \ $$| $$  \ $$| $$  \ $$| $$  \__/   | $$   | $$      | $$  \ $$  | $$  | $$  \__/   | $$     | $$  | $$  \__/
+| $$ $$/$$ $$| $$  | $$      | $$$$$$$$| $$      | $$$$$/  | $$ $$ $$| $$  | $$| $$/$$ $$ $$| $$      | $$$$$   | $$  | $$| $$ /$$$$| $$$$$         | $$      | $$$$$$$$| $$$$$$$$| $$$$$$$/| $$$$$$$$| $$         | $$   | $$$$$   | $$$$$$$/  | $$  |  $$$$$$    | $$     | $$  | $$      
+| $$  $$$| $$| $$  | $$      | $$__  $$| $$      | $$  $$  | $$  $$$$| $$  | $$| $$$$_  $$$$| $$      | $$__/   | $$  | $$| $$|_  $$| $$__/         | $$      | $$__  $$| $$__  $$| $$__  $$| $$__  $$| $$         | $$   | $$__/   | $$__  $$  | $$   \____  $$   | $$     | $$  | $$      
+| $$\  $ | $$| $$  | $$      | $$  | $$| $$    $$| $$\  $$ | $$\  $$$| $$  | $$| $$$/ \  $$$| $$      | $$      | $$  | $$| $$  \ $$| $$            | $$    $$| $$  | $$| $$  | $$| $$  \ $$| $$  | $$| $$    $$   | $$   | $$      | $$  \ $$  | $$   /$$  \ $$   | $$     | $$  | $$    $$
+| $$ \/  | $$| $$$$$$$/      | $$  | $$|  $$$$$$/| $$ \  $$| $$ \  $$|  $$$$$$/| $$/   \  $$| $$$$$$$$| $$$$$$$$| $$$$$$$/|  $$$$$$/| $$$$$$$$      |  $$$$$$/| $$  | $$| $$  | $$| $$  | $$| $$  | $$|  $$$$$$/   | $$   | $$$$$$$$| $$  | $$ /$$$$$$|  $$$$$$/   | $$    /$$$$$$|  $$$$$$/
+|__/     |__/|_______/       |__/  |__/ \______/ |__/  \__/|__/  \__/ \______/ |__/     \__/|________/|________/|_______/  \______/ |________/       \______/ |__/  |__/|__/  |__/|__/  |__/|__/  |__/ \______/    |__/   |________/|__/  |__/|______/ \______/    |__/   |______/ \______/ 
+                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+    
+MD ACKNOWLEDGE CHARACTERISTIC START                                                                                                                                                                                                 
+ _____________________________________________________________________________________________________________________________________________
+*/
+
+.screen{
+  &.screen-md-acknowledge-characteristic{
+    max-width:600px;
+    .frame-1 {
+      img {
+        width:50%;
+        margin-bottom: 4em;
+      }
+      .button {
+        margin-top:20em;
+      }
+    }
+
+
+    // .frame-1 {
+    //   .top-margin-breather {
+    //     margin-top:30px;
+    //   }
+    //   h3{
+    //     margin-bottom: 0px;
+    //   }
+    //   h4 {
+    //     margin: 0px 0px;
+    //   }
+    //   .title-image {
+    //     margin:-12px 0px 200px;
+    //   }
+    //   section {
+    //     &:first-of-type {
+    //       margin-bottom:40px;
+    //     }
+    //     &:last-of-type {
+    //       margin-bottom:40px;
+    //     }
+    //   }
+    //   .button-next {
+    //     width:110px;
+    //   }
+    // }
+
+    @media all and (max-width:499px){
+      padding: 70px 10px 0px;
+      .frame-1 {
+        img {
+          width:80%;
+        }
+        h3 {
+          font-size: 20px;
+        }
+        h2 {
+          font-size: 20px;
+          letter-spacing: 0.1em;
+        }
+        .button {
+          margin-top:10em;
+        }
+      }
+
+    //   padding: 70px 10px 0px;
+    //   .frame-1 {
+    //     .top-margin-breather {
+    //       margin-top:30px;
+    //     }
+    //     h2 {
+    //       font-size: 1.2em;
+    //       letter-spacing: 0.1em;
+    //     }
+    //     h3{
+    //       margin-bottom: 0px;
+    //       font-size: 1.2em;
+    //       letter-spacing: 0.1em;
+    //     }
+    //     h4 {
+    //       margin: 5px 0px;
+    //       font-family: OpenSans-Regular;
+    //     }
+    //     .title-image {
+    //       margin:0px 0px 75px;
+    //     }
+    //     section {
+    //       &:first-of-type {
+    //         margin-bottom:20px;
+    //       }
+    //       &:last-of-type {
+    //         margin-bottom:20px;
+    //       }
+    //     }
+    //     .button-next {
+    //       width:60px;
+    //     }
+    //   }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+/*
+MD ACKNOWLEDGE ROLES END
+______________________________________________________________________________________________
+*/
+
+
+
+/*
+ /$$      /$$ /$$   /$$  /$$$$$$ 
+| $$  /$ | $$| $$  | $$ /$$__  $$
+| $$ /$$$| $$| $$  | $$| $$  \ $$
+| $$/$$ $$ $$| $$$$$$$$| $$  | $$
+| $$$$_  $$$$| $$__  $$| $$  | $$
+| $$$/ \  $$$| $$  | $$| $$  | $$
+| $$/   \  $$| $$  | $$|  $$$$$$/
+|__/     \__/|__/  |__/ \______/ 
+
+WHO'S PLAYING START
+
+_____________________________________________________________________________________________________________________________________________
+*/
+.screen{
+  &.screen-who-is-playing{
+    .input-container{
+      background: url(../../img/person-white.png) no-repeat top left;
+      background-size: contain;
+    }
+    @media all and (min-width:500px){
+      .input-container{
+        background-size: 30px 30px;
+        background-position: 17px 17px;
+        padding-left:64px;
+      }
+    }
+    @media all and (max-width:499px){
+      .input-container{
+        background-size: 20px 20px;
+        background-position: 10px 10px;
+        padding-left:40px;
+      }
+      h3{
+        font-size: 20px;
+        letter-spacing:0.08333333333em;
+        font-family: OpenSans-Light;
+        margin:10px 0px 10px 0px;
+      }
+    }
+  }
+}
+
+/*
+WHO'S PLAYING  END
+______________________________________________________________________________________________
+*/
+
+
+/*
+  /$$$$$$  /$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$$ /$$$$$$$$ /$$$$$$$  /$$$$$$  /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$ 
+ /$$__  $$| $$  | $$ /$$__  $$| $$__  $$ /$$__  $$ /$$__  $$|__  $$__/| $$_____/| $$__  $$|_  $$_/ /$$__  $$|__  $$__/|_  $$_/ /$$__  $$
+| $$  \__/| $$  | $$| $$  \ $$| $$  \ $$| $$  \ $$| $$  \__/   | $$   | $$      | $$  \ $$  | $$  | $$  \__/   | $$     | $$  | $$  \__/
+| $$      | $$$$$$$$| $$$$$$$$| $$$$$$$/| $$$$$$$$| $$         | $$   | $$$$$   | $$$$$$$/  | $$  |  $$$$$$    | $$     | $$  | $$      
+| $$      | $$__  $$| $$__  $$| $$__  $$| $$__  $$| $$         | $$   | $$__/   | $$__  $$  | $$   \____  $$   | $$     | $$  | $$      
+| $$    $$| $$  | $$| $$  | $$| $$  \ $$| $$  | $$| $$    $$   | $$   | $$      | $$  \ $$  | $$   /$$  \ $$   | $$     | $$  | $$    $$
+|  $$$$$$/| $$  | $$| $$  | $$| $$  | $$| $$  | $$|  $$$$$$/   | $$   | $$$$$$$$| $$  | $$ /$$$$$$|  $$$$$$/   | $$    /$$$$$$|  $$$$$$/
+ \______/ |__/  |__/|__/  |__/|__/  |__/|__/  |__/ \______/    |__/   |________/|__/  |__/|______/ \______/    |__/   |______/ \______/ 
+
+CHOOSE CHARACTERLISTIC START
+_____________________________________________________________________________________________________________________________________________
+*/
+.screen{
+  &.screen-choose-characteristic, &.screen-md-choose-characteristic{
+
+    @media all and (min-width:500px){
+      .ui-table-view{
+        max-height: 520px;
+      }
+
+    }
+    @media all and (max-width:499px){
+      h3{
+        font-size: 20px;
+        letter-spacing:0.08333333333em;
+        font-family: OpenSans-Light;
+        margin:10px 0px 10px 0px;
+      }
+      .ui-table-view{
+        max-height: 133px;
+      }
+    }
+  }
+}
+
+/*
+WHO'S PLAYING  END
+______________________________________________________________________________________________
+*/
+
+
+
+
+
+
+
+/*
+ /$$$$$$$   /$$$$$$  /$$       /$$$$$$$$  /$$$$$$ 
+| $$__  $$ /$$__  $$| $$      | $$_____/ /$$__  $$
+| $$  \ $$| $$  \ $$| $$      | $$      | $$  \__/
+| $$$$$$$/| $$  | $$| $$      | $$$$$   |  $$$$$$ 
+| $$__  $$| $$  | $$| $$      | $$__/    \____  $$
+| $$  \ $$| $$  | $$| $$      | $$       /$$  \ $$
+| $$  | $$|  $$$$$$/| $$$$$$$$| $$$$$$$$|  $$$$$$/
+|__/  |__/ \______/ |________/|________/ \______/ 
+                                                  
+ROLE'S  START
+______________________________________________________________________________________________
+*/  
+.screen{
+  &.screen-choose-roles, &.screen-md-choose-roles{
+    .ui-dropdown-input.enabled:after{
+      content:"";
+      display: block;
+      width: 0; 
+      height: 0;
+      position:absolute;
+    }
+    h3:before {
+      content:"";
+      display: inline-block;
+      background: url(../../img/person-white.png) no-repeat top left;
+      background-size: contain;
+    }
+    @media all and (min-width:500px){
+      .ui-dropdown-input.enabled:after{
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 12px solid white;
+        top:32px;
+        right:28px;
+      }
+      h3:before {
+        width:28px;
+        height:28px;
+        margin:0px 10px -1px 0px;
+      }
+    }
+    @media all and (max-width:499px){
+      .ui-dropdown-input.enabled:after{
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid white;
+        top:20px;
+        right:20px;
+      }
+      h3:before {
+        width:18px;
+        height:18px;
+        margin:0px 8px -1px 0px;
+      }
+    }
+  }
+}
+                                              
+ /*
+ROLE'S  END
+______________________________________________________________________________________________
+*/                                                 
+
+
+
+
+
+
+
+
+
+
+/*
+  /$$$$$$  /$$   /$$  /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$$        /$$$$$$  /$$   /$$ /$$$$$$$$  /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$   /$$  /$$$$$$ 
+ /$$__  $$| $$  | $$ /$$__  $$ /$$__  $$ /$$__  $$| $$_____/       /$$__  $$| $$  | $$| $$_____/ /$$__  $$|__  $$__/|_  $$_/ /$$__  $$| $$$ | $$ /$$__  $$
+| $$  \__/| $$  | $$| $$  \ $$| $$  \ $$| $$  \__/| $$            | $$  \ $$| $$  | $$| $$      | $$  \__/   | $$     | $$  | $$  \ $$| $$$$| $$| $$  \__/
+| $$      | $$$$$$$$| $$  | $$| $$  | $$|  $$$$$$ | $$$$$         | $$  | $$| $$  | $$| $$$$$   |  $$$$$$    | $$     | $$  | $$  | $$| $$ $$ $$|  $$$$$$ 
+| $$      | $$__  $$| $$  | $$| $$  | $$ \____  $$| $$__/         | $$  | $$| $$  | $$| $$__/    \____  $$   | $$     | $$  | $$  | $$| $$  $$$$ \____  $$
+| $$    $$| $$  | $$| $$  | $$| $$  | $$ /$$  \ $$| $$            | $$/$$ $$| $$  | $$| $$       /$$  \ $$   | $$     | $$  | $$  | $$| $$\  $$$ /$$  \ $$
+|  $$$$$$/| $$  | $$|  $$$$$$/|  $$$$$$/|  $$$$$$/| $$$$$$$$      |  $$$$$$/|  $$$$$$/| $$$$$$$$|  $$$$$$/   | $$    /$$$$$$|  $$$$$$/| $$ \  $$|  $$$$$$/
+ \______/ |__/  |__/ \______/  \______/  \______/ |________/       \____ $$$ \______/ |________/ \______/    |__/   |______/ \______/ |__/  \__/ \______/ 
+                                                                        \__/                                                                              
+                                                                                                                                                          
+
+CHOOSE QUESTIONS START
+_____________________________________________________________________________________________________________________________________________
+*/
+.screen{
+  &.screen-choose-questions{
+    .ui-table-view-item a {
+      text-transform: none;
+      font-family: OpenSans-Semibold;
+      border-bottom: 1px dashed
+    }
+    @media all and (min-width:500px){
+      .ui-table-view{
+        max-height: 520px;
+      }
+    }
+    @media all and (max-width:499px){
+      .ui-table-view{
+        max-height: 200px;
+      }
+    }
+  }
+}
+
+/*
+CHOOSE QUESTIONS  END
+______________________________________________________________________________________________
+*/
+
+
+
+
+
+/*
+ /$$$$$$$  /$$$$$$$$  /$$$$$$  /$$$$$$$  /$$     /$$
+| $$__  $$| $$_____/ /$$__  $$| $$__  $$|  $$   /$$/
+| $$  \ $$| $$      | $$  \ $$| $$  \ $$ \  $$ /$$/ 
+| $$$$$$$/| $$$$$   | $$$$$$$$| $$  | $$  \  $$$$/  
+| $$__  $$| $$__/   | $$__  $$| $$  | $$   \  $$/   
+| $$  \ $$| $$      | $$  | $$| $$  | $$    | $$    
+| $$  | $$| $$$$$$$$| $$  | $$| $$$$$$$/    | $$    
+|__/  |__/|________/|__/  |__/|_______/     |__/    
+                                                    
+                                                    
+
+READY START
+_____________________________________________________________________________________________________________________________________________
+*/
+.screen{
+  &.screen-ready{
+    max-width: 668px;
+    
+    .image-home-header {
+      overflow: hidden;
+    }
+    @media all and (min-width:500px){
+      .title-image {
+        margin-top:20px;
+        margin-bottom:60px;
+      }
+      h2{
+        margin-top:50px;
+      }
+      h3{
+        margin-top:20px;
+        line-height: 1.4em;
+      }
+      h4{
+        margin-top:70px;
+        margin-bottom:70px;
+        line-height: 1.4em;
+      }
+    }
+    @media all and (max-width:499px){
+      padding: 30px 10px 0px 10px;
+      .title-image {
+        margin-top:30px;
+        margin-bottom:40px;
+      }
+      h2{
+        margin-top:20px;
+        font-size: 20px;
+      }
+      h3{
+        margin-top:15px;
+        line-height: 1.4em;
+        font-size: 18px;
+        font-family: OpenSans-Regular;
+      }
+      h4{
+        margin-top:20px;
+        line-height: 1.4em;
+        font-size: 16px;
+        margin-bottom:50px;
+        font-family: OpenSans-Regular;
+      }
+    }
+  }
+}
+
+/*
+READY  END
+______________________________________________________________________________________________
+*/
+
+
+
+
+
+/*
+ /$$$$$$$$ /$$   /$$ /$$$$$$$$ /$$$$$$$$ /$$$$$$$         /$$$$$$  /$$   /$$ /$$$$$$$$  /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$   /$$
+| $$_____/| $$$ | $$|__  $$__/| $$_____/| $$__  $$       /$$__  $$| $$  | $$| $$_____/ /$$__  $$|__  $$__/|_  $$_/ /$$__  $$| $$$ | $$
+| $$      | $$$$| $$   | $$   | $$      | $$  \ $$      | $$  \ $$| $$  | $$| $$      | $$  \__/   | $$     | $$  | $$  \ $$| $$$$| $$
+| $$$$$   | $$ $$ $$   | $$   | $$$$$   | $$$$$$$/      | $$  | $$| $$  | $$| $$$$$   |  $$$$$$    | $$     | $$  | $$  | $$| $$ $$ $$
+| $$__/   | $$  $$$$   | $$   | $$__/   | $$__  $$      | $$  | $$| $$  | $$| $$__/    \____  $$   | $$     | $$  | $$  | $$| $$  $$$$
+| $$      | $$\  $$$   | $$   | $$      | $$  \ $$      | $$/$$ $$| $$  | $$| $$       /$$  \ $$   | $$     | $$  | $$  | $$| $$\  $$$
+| $$$$$$$$| $$ \  $$   | $$   | $$$$$$$$| $$  | $$      |  $$$$$$/|  $$$$$$/| $$$$$$$$|  $$$$$$/   | $$    /$$$$$$|  $$$$$$/| $$ \  $$
+|________/|__/  \__/   |__/   |________/|__/  |__/       \____ $$$ \______/ |________/ \______/    |__/   |______/ \______/ |__/  \__/
+                                                              \__/                                                                    
+
+ENTER QUESTION START
+_____________________________________________________________________________________________________________________________________________
+*/
+.screen{
+  &.screen-enter-question, &.screen-md-enter-question{
+    textarea {
+      text-transform: none;
+    }
+    @media all and (min-width:500px){
+      padding: 85px 10px 0px 10px;
+      h3{
+        margin-top:45px;
+        line-height: 1.4em;
+        margin-bottom: 35px;
+        font-size: 30px;
+      }
+      .button {
+        margin-top: 180px;
+        width:230px;
+      }
+    }
+    @media all and (max-width:499px){
+      padding: 85px 10px 0px 10px;
+      h3{
+        margin-top:15px;
+        line-height: 1.4em;
+        font-size: 18px;
+        font-family: OpenSans-Regular;
+        margin-bottom: 15px;
+      }
+      .button {
+        margin-top: 20px;
+        width:140px;
+      }
+    }
+  }
+}
+
+/*
+ENTER QUESTION  END
+______________________________________________________________________________________________
+*/
+
+
+
+
+/*
+ /$$$$$$$$ /$$   /$$ /$$$$$$$$ /$$$$$$$$ /$$$$$$$         /$$$$$$  /$$   /$$  /$$$$$$  /$$      /$$ /$$$$$$$$ /$$$$$$$ 
+| $$_____/| $$$ | $$|__  $$__/| $$_____/| $$__  $$       /$$__  $$| $$$ | $$ /$$__  $$| $$  /$ | $$| $$_____/| $$__  $$
+| $$      | $$$$| $$   | $$   | $$      | $$  \ $$      | $$  \ $$| $$$$| $$| $$  \__/| $$ /$$$| $$| $$      | $$  \ $$
+| $$$$$   | $$ $$ $$   | $$   | $$$$$   | $$$$$$$/      | $$$$$$$$| $$ $$ $$|  $$$$$$ | $$/$$ $$ $$| $$$$$   | $$$$$$$/
+| $$__/   | $$  $$$$   | $$   | $$__/   | $$__  $$      | $$__  $$| $$  $$$$ \____  $$| $$$$_  $$$$| $$__/   | $$__  $$
+| $$      | $$\  $$$   | $$   | $$      | $$  \ $$      | $$  | $$| $$\  $$$ /$$  \ $$| $$$/ \  $$$| $$      | $$  \ $$
+| $$$$$$$$| $$ \  $$   | $$   | $$$$$$$$| $$  | $$      | $$  | $$| $$ \  $$|  $$$$$$/| $$/   \  $$| $$$$$$$$| $$  | $$
+|________/|__/  \__/   |__/   |________/|__/  |__/      |__/  |__/|__/  \__/ \______/ |__/     \__/|________/|__/  |__/
+                                                                                                                       
+                                                                                                                       
+
+ENTER ANSWER START
+_____________________________________________________________________________________________________________________________________________
+*/
+.screen{
+  &.screen-enter-answer, &.screen-md-enter-answer{
+    textarea {
+      text-transform: none;
+    }
+    .count-down-wrapper{
+      height:50px;
+      position:relative;
+      .count-down {
+        position:absolute;
+        span {
+          font-size: 22px;
+          font-family: OpenSans-Light;
+          letter-spacing: 0.15em;
+          padding-top:10px;
+        }
+        span, svg {
+          display:block;
+          float: left;
+          &.count-down-timer{
+            font-family: OpenSans-Bold;
+          }
+        }
+        svg {
+          margin-right:12px;
+          margin-left:12px;
+        }
+      }
+    }
+    @media all and (min-width:500px){
+      padding: 125px 10px 0px 10px;
+
+      h6{
+        margin-top:40px;
+        font-size: 22px;
+        text-transform: none;
+        display: block;
+        margin-bottom: 25px;
+      }
+      textarea {
+        //height:180px;
+      }
+      .button {
+        margin-top: 40px;
+      }
+      .input-container {
+        margin: 0px 0px 22px 0px;
+      }
+      .count-down-wrapper{
+        height:50px;
+        .count-down {
+          left:-152px;
+          margin-left:50%;
+          span {
+            font-size: 22px;
+            padding-top:10px;
+          }
+        }
+      }
+    }
+    @media all and (max-width:499px){
+      padding: 75px 10px 0px 10px;
+      h4{
+        margin-top:15px;
+        line-height: 1.4em;
+        font-size: 18px;
+        font-family: OpenSans-Regular;
+        margin-bottom: 15px;
+      }
+      h6{
+        text-transform: none;
+        display: block;
+        margin-bottom: 15px;
+        line-height: 1.4em;
+      }
+      .button {
+        margin-top: 12px;
+      }
+      textarea {
+        height:100px;
+      }
+      .input-container {
+        margin: 0px 0px 20px 0px;
+      }
+      .count-down-wrapper{
+        height:50px;
+        .count-down {
+          left:-117px;
+          margin-left:50%;
+          span {
+            font-size: 16px;
+            padding-top:14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+ENTER ANSWER END
+______________________________________________________________________________________________
+*/
+
+
+
+
+
+/*
+ /$$$$$$$  /$$$$$$$$ /$$    /$$ /$$$$$$$$  /$$$$$$  /$$                   /$$       /$$$$$$$  /$$$$$$$$ /$$    /$$ /$$$$$$ /$$$$$$$$ /$$      /$$
+| $$__  $$| $$_____/| $$   | $$| $$_____/ /$$__  $$| $$                  /$$/      | $$__  $$| $$_____/| $$   | $$|_  $$_/| $$_____/| $$  /$ | $$
+| $$  \ $$| $$      | $$   | $$| $$      | $$  \ $$| $$                 /$$/       | $$  \ $$| $$      | $$   | $$  | $$  | $$      | $$ /$$$| $$
+| $$$$$$$/| $$$$$   |  $$ / $$/| $$$$$   | $$$$$$$$| $$                /$$/        | $$$$$$$/| $$$$$   |  $$ / $$/  | $$  | $$$$$   | $$/$$ $$ $$
+| $$__  $$| $$__/    \  $$ $$/ | $$__/   | $$__  $$| $$               /$$/         | $$__  $$| $$__/    \  $$ $$/   | $$  | $$__/   | $$$$_  $$$$
+| $$  \ $$| $$        \  $$$/  | $$      | $$  | $$| $$              /$$/          | $$  \ $$| $$        \  $$$/    | $$  | $$      | $$$/ \  $$$
+| $$  | $$| $$$$$$$$   \  $/   | $$$$$$$$| $$  | $$| $$$$$$$$       /$$/           | $$  | $$| $$$$$$$$   \  $/    /$$$$$$| $$$$$$$$| $$/   \  $$
+|__/  |__/|________/    \_/    |________/|__/  |__/|________/      |__/            |__/  |__/|________/    \_/    |______/|________/|__/     \__/
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                                                                                                                                                     
+                                                             
+REVEAL START
+_____________________________________________________________________________________________________________________________________________
+*/
+.screen{
+  &.screen-reveal, &.screen-review, &.screen-md-reveal, &.screen-md-round-game-end{
+    section {
+      clear: both;
+    }
+    textarea {
+      text-transform: none;
+    }
+    .conversation-container {
+      &:after {
+        content:"";
+        display:table;
+        clear:both;
+      }
+    }
+    .conversation-copy {
+      font-family: OpenSans-Regular;
+      letter-spacing:0.1111111111em;
+      line-height: 1.4em;
+      text-transform: none;
+    }
+    .bubble {
+      position:relative;
+      margin: 12px 0px;
+      min-width: 240px; /* plus 60 padding, plus screen border*/
+      max-width: 400px;
+      height:auto;
+      min-height: 70px;
+      padding:15px 10px 56px 50px;  /* 60 plus width in padding*/
+      .bubble-svg {
+        position:absolute;
+        top:0px;
+        left:0px;
+        visibility: visible;
+      }
+      .conversation-copy{
+        position:relative;
+        height:auto;
+        width:100%;
+        display: -webkit-box;
+        text-align: left;
+      }
+      &.bubble-left{
+        float: left;
+        @media all and (min-width:500px){
+          min-width: 400px;
+        }
+      }
+      &.bubble-right {
+        float: right;
+        @media all and (min-width:500px){
+          min-width: 400px;
+        }
+      }
+    }
+    .bubble.bubble-left .conversation-copy{
+      color:#eb5055;
+    }
+    .bubble.bubble-right .conversation-copy{
+      color:white;
+    }
+    
+    .flip-container{
+      -webkit-perspective: 3000px;
+      -webkit-perspective-origin: 50% 50%;
+      -webkit-transform: rotate3d(1, 0, 0, 0deg);
+      -webkit-transition: -webkit-transform 500ms;
+      -webkit-transform-style: preserve-3d;
+    }
+    .button-guess-a-b{
+      -webkit-transform: rotate3d(1, 0, 0, 180deg);
+      -webkit-backface-visibility:hidden;
+    }
+    .button.button-guess{
+      margin:0px !important;
+      -webkit-transform: rotate3d(1, 0, 0, 0deg);
+      -webkit-backface-visibility:hidden;
+    }
+    .text-question-content {
+      text-transform: none;
+    }
+
+    @media all and (min-width:500px){
+      //padding: 125px 10px 0px 10px;
+      h6{
+        margin-top:0px;
+        font-size: 20px;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 35px;
+        letter-spacing:0.1111111111em;
+        line-height: 1.4em;
+      }
+      .button {
+        margin-top: 20px;
+        width:290px;
+      }
+      .conversation-copy {
+        font-size:18px;
+      }
+      section:nth-child(4) .bubble{
+        margin-bottom:74px;
+      }
+      .flip-container{
+        margin:20px;
+      }
+
+    }
+    @media all and (max-width:499px){
+      padding: 75px 10px 0px 10px;
+      h3{
+        font-family: OpenSans-Regular;
+      }
+      h4{
+        line-height: 1.4em;
+        font-size: 18px;
+        font-family: OpenSans-Bold;
+      }
+      h6, h5{
+        font-size:16px;
+        font-family: OpenSans-Bold;
+        text-transform: uppercase;
+        display: block;
+        line-height: 1.4em;
+        margin: 10px 10px;
+      }
+      .bubble{
+        min-height: 50px;
+      }
+      .button {
+        margin: 0px;
+        width:180px;
+      }
+      .text-question-content {
+        font-family: OpenSans-Semibold;
+        letter-spacing: 0.11em;
+      }
+      div:last-child.button{
+        margin-bottom: 20px;
+      }
+      .conversation-copy {
+        font-size:14px;
+      }
+      section:nth-child(4) .bubble{
+        margin-bottom:50px;
+      }
+    }
+  }
+}
+
+/*
+READY  END
+______________________________________________________________________________________________
+
+
+
+/*
+ /$$$$$$$   /$$$$$$  /$$   /$$ /$$   /$$ /$$$$$$$        /$$$$$$$$ /$$   /$$ /$$$$$$$ 
+| $$__  $$ /$$__  $$| $$  | $$| $$$ | $$| $$__  $$      | $$_____/| $$$ | $$| $$__  $$
+| $$  \ $$| $$  \ $$| $$  | $$| $$$$| $$| $$  \ $$      | $$      | $$$$| $$| $$  \ $$
+| $$$$$$$/| $$  | $$| $$  | $$| $$ $$ $$| $$  | $$      | $$$$$   | $$ $$ $$| $$  | $$
+| $$__  $$| $$  | $$| $$  | $$| $$  $$$$| $$  | $$      | $$__/   | $$  $$$$| $$  | $$
+| $$  \ $$| $$  | $$| $$  | $$| $$\  $$$| $$  | $$      | $$      | $$\  $$$| $$  | $$
+| $$  | $$|  $$$$$$/|  $$$$$$/| $$ \  $$| $$$$$$$/      | $$$$$$$$| $$ \  $$| $$$$$$$/
+|__/  |__/ \______/  \______/ |__/  \__/|_______/       |________/|__/  \__/|_______/ 
+                                                                                      
+READY START
+_____________________________________________________________________________________________________________________________________________
+*/
+.screen{
+  &.screen-round-end{
+    @media all and (min-width:500px){
+      max-width: 668px;
+      padding: 95px 10px 0px 10px;
+      h4{
+        margin-top:55px;
+        margin-bottom:65px;
+      }
+      .button {
+        width:220px;
+        &.button-next {
+          width:170px;
+        }
+      }
+    }
+    @media all and (max-width:499px){
+      padding: 50px 30px 0px 30px;
+      h4{
+        margin-top:40px;
+        margin-bottom:50px;
+      }
+      .button {
+        width:140px;
+        &.button-next {
+          width:100px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+/*
+READY  END
+______________________________________________________________________________________________
+
+  /$$$$$$   /$$$$$$  /$$      /$$ /$$$$$$$$        /$$$$$$  /$$    /$$ /$$$$$$$$ /$$$$$$$ 
+ /$$__  $$ /$$__  $$| $$$    /$$$| $$_____/       /$$__  $$| $$   | $$| $$_____/| $$__  $$
+| $$  \__/| $$  \ $$| $$$$  /$$$$| $$            | $$  \ $$| $$   | $$| $$      | $$  \ $$
+| $$ /$$$$| $$$$$$$$| $$ $$/$$ $$| $$$$$         | $$  | $$|  $$ / $$/| $$$$$   | $$$$$$$/
+| $$|_  $$| $$__  $$| $$  $$$| $$| $$__/         | $$  | $$ \  $$ $$/ | $$__/   | $$__  $$
+| $$  \ $$| $$  | $$| $$\  $ | $$| $$            | $$  | $$  \  $$$/  | $$      | $$  \ $$
+|  $$$$$$/| $$  | $$| $$ \/  | $$| $$$$$$$$      |  $$$$$$/   \  $/   | $$$$$$$$| $$  | $$
+ \______/ |__/  |__/|__/     |__/|________/       \______/     \_/    |________/|__/  |__/
+                                                                                          
+GAME OVER START
+_____________________________________________________________________________________________________________________________________________
+*/                                                                                      
+.screen{
+  &.screen-game-over{
+    @media all and (min-width:500px){
+      max-width: 668px;
+      padding: 95px 10px 0px 10px;
+      table{
+        margin-top:67px;
+        margin-bottom:70px;
+      }
+    }
+    @media all and (max-width:499px){
+      padding: 50px 30px 0px 30px;
+      table{
+        margin-top:30px;
+        margin-bottom:30px;
+      }
+    }
+  }
+}
+
+
+/*
+
+ /$$      /$$ /$$$$$$$        /$$$$$$$   /$$$$$$  /$$   /$$ /$$   /$$ /$$$$$$$         /$$$$$$   /$$$$$$  /$$      /$$ /$$$$$$$$       /$$$$$$$$ /$$   /$$ /$$$$$$$ 
+| $$$    /$$$| $$__  $$      | $$__  $$ /$$__  $$| $$  | $$| $$$ | $$| $$__  $$       /$$__  $$ /$$__  $$| $$$    /$$$| $$_____/      | $$_____/| $$$ | $$| $$__  $$
+| $$$$  /$$$$| $$  \ $$      | $$  \ $$| $$  \ $$| $$  | $$| $$$$| $$| $$  \ $$      | $$  \__/| $$  \ $$| $$$$  /$$$$| $$            | $$      | $$$$| $$| $$  \ $$
+| $$ $$/$$ $$| $$  | $$      | $$$$$$$/| $$  | $$| $$  | $$| $$ $$ $$| $$  | $$      | $$ /$$$$| $$$$$$$$| $$ $$/$$ $$| $$$$$         | $$$$$   | $$ $$ $$| $$  | $$
+| $$  $$$| $$| $$  | $$      | $$__  $$| $$  | $$| $$  | $$| $$  $$$$| $$  | $$      | $$|_  $$| $$__  $$| $$  $$$| $$| $$__/         | $$__/   | $$  $$$$| $$  | $$
+| $$\  $ | $$| $$  | $$      | $$  \ $$| $$  | $$| $$  | $$| $$\  $$$| $$  | $$      | $$  \ $$| $$  | $$| $$\  $ | $$| $$            | $$      | $$\  $$$| $$  | $$
+| $$ \/  | $$| $$$$$$$/      | $$  | $$|  $$$$$$/|  $$$$$$/| $$ \  $$| $$$$$$$/      |  $$$$$$/| $$  | $$| $$ \/  | $$| $$$$$$$$      | $$$$$$$$| $$ \  $$| $$$$$$$/
+|__/     |__/|_______/       |__/  |__/ \______/  \______/ |__/  \__/|_______/        \______/ |__/  |__/|__/     |__/|________/      |________/|__/  \__/|_______/ 
+   
+   */                                                                                                                                                                 
+ 
+.screen{
+  &.screen-md-round-game-end {
+    padding: 90px 10px 0px 10px;
+    .frame-1 {
+      .title-image {
+        margin-bottom:80px;
+      }
+      section:nth-child(2) {
+        margin-bottom: 80px;
+      }
+      .button {
+        width:230px;
+      }
+      .button-next {
+        width:180px;
+      }
+    }
+    @media all and (min-width:500px){
+      max-width: 668px;
+      padding: 90px 10px 0px 10px;
+
+    }
+    @media all and (max-width:499px){
+      padding: 70px 10px 0px 10px;
+      .frame-1 {
+        h4 {
+          font-size: 1em;
+        }
+        .title-image {
+          margin-bottom:30px;
+        }
+        section:nth-child(2) {
+          margin-bottom: 40px;
+        }
+        .button {
+          width:130px;
+        }
+        .button-next {
+          width:92px;
+        }
+      }
+    }
+    .frame-2 {
+      section:nth-child(2){
+        margin: 50px 0px 25px;
+      }
+      section:nth-child(4){
+        margin-top: 25px;
+      }
+      @media all and (min-width:500px){
+        section:nth-child(2) h4{
+          font-size: 36px;
+          font-family: OpenSans-Bold;
+          letter-spacing: 0.15em;
+        }
+      }
+
+      
+      @media all and (max-width:499px){
+        section:nth-child(2){
+          margin: 25px 0px 15px;
+        }
+        section:nth-child(4){
+          margin-top: 40px;
+        }
+      }
+    }
+    .frame-4 {
+      section:nth-child(1) h3{
+        margin-top:0px;
+      }
+
+    }
+  }
+}
+
+
+
+
+
+
+ /*MD ROUND GAME END START
+_____________________________________________________________________________________________________________________________________________
+                                                                                                                                                                   
+                                                                                                                                                                    
+*/
+
+
+/*END OF SCREENS
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________
+*/
+
+
+
+/*
+  /$$$$$$  /$$   /$$ /$$$$$$ /$$      /$$  /$$$$$$  /$$$$$$$$ /$$$$$$  /$$$$$$  /$$   /$$
+ /$$__  $$| $$$ | $$|_  $$_/| $$$    /$$$ /$$__  $$|__  $$__/|_  $$_/ /$$__  $$| $$$ | $$
+| $$  \ $$| $$$$| $$  | $$  | $$$$  /$$$$| $$  \ $$   | $$     | $$  | $$  \ $$| $$$$| $$
+| $$$$$$$$| $$ $$ $$  | $$  | $$ $$/$$ $$| $$$$$$$$   | $$     | $$  | $$  | $$| $$ $$ $$
+| $$__  $$| $$  $$$$  | $$  | $$  $$$| $$| $$__  $$   | $$     | $$  | $$  | $$| $$  $$$$
+| $$  | $$| $$\  $$$  | $$  | $$\  $ | $$| $$  | $$   | $$     | $$  | $$  | $$| $$\  $$$
+| $$  | $$| $$ \  $$ /$$$$$$| $$ \/  | $$| $$  | $$   | $$    /$$$$$$|  $$$$$$/| $$ \  $$
+|__/  |__/|__/  \__/|______/|__/     |__/|__/  |__/   |__/   |______/ \______/ |__/  \__/
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         */
+
+
+@include keyframes(pulseIn) {
+  0% {
+    -webkit-transform: translate3d(0,0,0);
+  }
+  100% {
+    -webkit-transform: translate3d(0,0,-100px);
+  }
+}
+@include keyframes(fadeOut) {
+  0% {
+    opacity: 1;
+    //-webkit-transform: translate3d(0, 0, 0) rotateY(0);
+  }
+  100% {
+    opacity: 0;
+    //-webkit-transform: translate3d(100%, 0, 0) rotateY(90deg) translate3d(100%, 0, 0);
+  }
+}
+@include keyframes(greenToRed) {
+  0% {background-color: #5bb9a7;}
+  100% {background-color: #eb5055;}
+}
+@include keyframes(fadeIn) {
+  0% {
+    opacity: 0;
+    //-webkit-transform: translate3d(-100%, 0, 0) rotateY(-90deg) translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    //-webkit-transform: translate3d(0, 0, 0) rotateY(0);
+  }
+}
+@include keyframes(slideUp) {
+  0% {
+    -webkit-transform: translate3d(0,100px,-1000px);
+    opacity: 0;
+    //-webkit-transform: translate3d(0, 0, 0) rotateY(0);
+  }
+  100% {
+    -webkit-transform: translate3d(0,0,0);
+    opacity: 1;
+    //-webkit-transform: translate3d(100%, 0, 0) rotateY(90deg) translate3d(100%, 0, 0);
+  }
+}
+@include keyframes(titleReveal) {
+  0% {
+    -webkit-transform: translate3d(0,-50px,-3000px);
+    opacity: 0.5;
+    //-webkit-transform: translate3d(0, 0, 0) rotateY(0);
+  }
+  5%{
+    -webkit-transform: translate3d(0,0,-200px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate3d(0,0,0);
+    opacity: 1;
+    -webkit-transition-timing-function: cubic-bezier(0,.6,.15,1);
+    //-webkit-transform: translate3d(100%, 0, 0) rotateY(90deg) translate3d(100%, 0, 0);
+  }
+}
+@include keyframes(slideInRight) {
+  0% {
+    -webkit-transform: translate3d(200%,0px,-500px);
+    //-webkit-transform: translate3d(-100%,0px,-500px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+}
+@include keyframes(slideOutLeft) {
+  0% {
+    -webkit-transform: translate3d(0,0,0);
+    opacity: 0;
+  }
+  100% {
+    //-webkit-transform: translate3d(200%,0px,-500px);
+    -webkit-transform: translate3d(-100%,0px,-500px);
+    opacity: 1;
+  }
+}
+@include keyframes(pullIn) {
+  0% {
+    -webkit-transform: translate3d(0,0,-3000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+}
+@include keyframes(pullOut) {
+  0% {
+    -webkit-transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate3d(0,0,3000px);
+    opacity: 0;
+  }
+}
+
+
+.fadeInEnable{
+  @include animation(fadeIn 0.2s ease);
+}
+.fadeOutEnable {
+  @include animation(fadeOut 0.2s ease);
+}
+.greenToRedEnable {
+  @include animation(greenToRed 0.2s ease);
+}
+.pulse{
+  @include animation(pulseIn 0.2s ease);
+}
+.slideUpEnable{
+  @include animation(slideUp 0.4s ease);
+}
+.titleRevealEnable{
+  @include animation(titleReveal 4s linear);
+}
+.slideInRightEnable{
+  @include animation(slideInRight 0.5s ease-out);
+}
+.slideOutLeftEnable{
+  @include animation(slideOutLeft 0.5s ease-out);
+}
+.pullInEnable{
+  @include animation(pullIn 0.5s ease-out);
+}
+.pullOutEnable{
+  @include animation(pullOut 0.5s ease-out);
+}
+
+

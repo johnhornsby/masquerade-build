@@ -1,0 +1,26 @@
+.screen.screen-home.template
+  .image-home-header
+    img.title-image.visible-for-tablet(src='img/masquerade-simple@2x.png')
+    img.title-image.visible-for-mobile(src='img/masquerade-simple@2x.png')
+  ul.menu
+    li.animation-peel
+      a.button.button-choose-device(href='#')
+        translation(data-key='home-button-play-game')
+    li.animation-peel
+      a.button.button-how-to-play(href='#')
+        translation(data-key='home-button-how-to-play')
+    li.animation-peel
+      a.button.button-high-scores(href='#')
+        translation(data-key='home-button-scoreboard')
+    li.animation-peel
+      a.button.button-settings(href='#')
+        translation(data-key='home-button-settings')
+  footer
+    img(src='img/footer.svg')
+  //- Help Content Removed For later Use
+  .help-content
+    section
+      h3
+        translation(data-key='home-help-title')
+      translation(data-key='home-help-text')
+  //- End of Help Content

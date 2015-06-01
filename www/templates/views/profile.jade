@@ -1,0 +1,64 @@
+.screen.screen-profile.template(data-navigation-title='Your Profile')
+  section.top-margin-breather.animation-slide
+      h3 Your Nickname
+      .input-container
+        input(type='text')
+  section.animation-slide
+    h3 Your Age
+    .ui-dropdown.ui-dropdown-age
+      .ui-dropdown-input.input-container
+        input(type='text', readonly='readonly')
+      .ui-table-view.ui-dropdown-select(data-dropdown-maxshow='7')
+        ul.ui-table-view-content
+          li.ui-table-view-item
+            a(href='#', data-value='-1') Please Select
+          li.ui-table-view-item
+            a(href='#', data-value='1') under 16
+          li.ui-table-view-item
+            a(href='#', data-value='2') 16 - 19
+          li.ui-table-view-item
+            a(href='#', data-value='3') 25 - 34
+          li.ui-table-view-item
+            a(href='#', data-value='4') 35 - 49
+          li.ui-table-view-item
+            a(href='#', data-value='5') 50 - 59
+          li.ui-table-view-item
+            a(href='#', data-value='6') 60+
+          //- //
+          //-             <li class="ui-table-view-item">
+          //-               <a href="#" data-value="0">I'd Rather Not Say</a>
+          //-             </li>
+                    
+        #scroll-panel-thumb-verticle.thumb-verticle-frame
+          .thumb-verticle
+            .thumb-graphics
+  section.animation-slide
+    h3 Your Gender
+    .ui-dropdown.ui-dropdown-gender
+      .ui-dropdown-input.input-container
+        input(type='text', readonly='readonly')
+      .ui-table-view.ui-dropdown-select(data-dropdown-maxshow='7')
+        ul.ui-table-view-content
+          li.ui-table-view-item
+            a(href='#', data-value='-1') Please Select
+          li.ui-table-view-item
+            a(href='#', data-value='1') MALE
+          li.ui-table-view-item
+            a(href='#', data-value='2') FEMALE
+
+                      //- <li class="ui-table-view-item">
+                      //-   <a href="#" data-value="0">I'd Rather Not Say</a>
+                      //- </li>
+                    
+        #scroll-panel-thumb-verticle.thumb-verticle-frame
+          .thumb-verticle
+            .thumb-graphics
+  section.privacy-agreement.animation-slide
+    input#privacy-checkbox.ui-checkbox(type='checkbox', name='a')
+    label(for='privacy-checkbox', value='bob')
+    article
+      | By ticking this box you agree that Cardiff University may use your age, gender, questions and answers for research purposes.
+      | Please Note: Only your nickname will be visible to other players and will never be retained by us. Further information about the research and how data may be used is available at 
+      a(href='http://blogs.cf.ac.uk/imgame/') http://blogs.cf.ac.uk/imgame/
+  section
+    .button.button-apply Apply

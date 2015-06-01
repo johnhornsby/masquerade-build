@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='format-detection', content='telephone=no')
+    //- remove the below meta tag on android
+    if includeMetaViewportTag
+      meta(name='viewport', content='user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi')
+    title Masquerade
+    link(rel='shortcut icon', type='image/ico', href='/favicon.ico')
+    if isProduction
+      link(href='assets/css/style.css', rel='stylesheet')
+    else
+      link(href='assets/css/style.css', rel='stylesheet')
+
+  body.color-background-floodable(style='visibility: hidden;')
+    #wrapper
+      include ../views/views.jade
+    .debug-output
+    script(type='text/javascript', src='cordova.js')
+    if isProduction
+      include ../scripts/vendor-min.jade
+      include ../scripts/app-min.jade
+    else
+      include ../scripts/vendor.jade
+      include ../scripts/app.jade

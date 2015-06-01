@@ -1,0 +1,18 @@
+.screen.screen-md-join-game.template(data-navigation-title='Join Game')
+  .frame.frame-1
+    section.top-margin-breather
+      h3.is-creator Your Game Pin
+      h3.is-joiner Enter Game Pin
+      .input-container
+        input(type='text', maxlength='5')
+      h4.is-creator (SHARE THIS PIN TO ALLOW OTHER PLAYERS TO JOIN YOUR GAME)
+      h4.is-joiner (You need to enter the game pin to join the game)
+    section
+      .button.button-next.button-call-server Join Game
+  .frame.frame-2.frame-waiting
+    section.top-margin-breather
+      h3 Waiting for other players...
+    canvas#waiting-for-server(width='391px', height='391px')
+    h4 Your Pin
+    .input-container
+      input(type='text', maxlength='5')

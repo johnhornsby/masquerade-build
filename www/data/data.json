@@ -1,0 +1,77 @@
+{
+	"trainingQuestions":[
+		{
+			"characteristic":"A Male",
+			"questions":[
+				{
+					"j":"What were your favourite childhood games?",
+					"p":"When I was much younger, hide and seek, kiss chase, and then as I got a little bit older I used to love kicking a football round with my mates.",
+					"np":"Football and bulldog in the playground."
+				},
+				{
+					"j":"What is your favourite genre of film and why?",
+					"p":"Action - the guns, the hot women, the nice cars.",
+					"np":"Horror, I like being on the edge of my seat and seek thrill in getting scared."
+				},
+				{
+					"j":"Is there ever a valid reason to sleep with you best friends ex? If so explain",
+					"p":"Of course. She's an ex for a reason. Your best friend will think you're a lad for sleeping with anyone, he won't care if it's his ex (mine wouldn't).",
+					"np":"The bro-code states you can't sleep with an ex. True when he's your best mate and why you need lots of close mates so that it's fine - if's she's hot"
+				},
+				{
+					"j":"Can you describe the pain felt when you have been hit in the testicles? ",
+					"p":"It absolutely kills. It hurts for ages afterwards as well. It's like a shooting sensation initially and then it's really sore for ages afterwards.",
+					"np":"Unbearable. The first time it happens you find you can't talk and I have lain on the ground for over 10 mins. Breaking a bone was not nearly as bad."
+				},
+				{
+					"j":"What were the most memorable 3 experiences that you had at school?",
+					"p":"When I won the football game, when someone had water thrown at them, when I got an A.",
+					"np":"Representing the school at sports events, leavers ball, post exam party."
+				},
+				{
+					"j":"Are you a member of a gym? What sort of exercise do you do in your week-to-week life? ",
+					"p":"No, I am not a member of a gym. But I own a treadmill and an exercise bike. I am also a dancer.",
+					"np":"I go to a gym every now and then to do weights. Got footy on Weds and Sunday and we do fitness on Fridays."
+				}
+			]
+
+		},
+		{
+			"characteristic":"A Female",
+			"questions":[
+				{
+					"j":"What would you consider to be the worst thing about being a woman?",
+					"p":"My periods, I get bad pains all the time and they make me very moody.",
+					"np":"Looking good takes longer, and is harder for women. There's so much pressure on us to look pretty all the time and mostly you don't want to bother!"
+				},
+				{
+					"j":"Do you have children or would you like to have them in the future?  Please explain why you have made this decision.",
+					"p":"No. The pain of childbirth puts me off, also unless you find the right person there is no point, especially if they have to see you during labour.",
+					"np":"I think so, hopefully after I've established a career. Fingers crossed that doesn't take too long! And obviously if I find someone to have kids with!"
+				},
+				{
+					"j":"When you were growing up, what job did you want to do when you were older?",
+					"p":"I have always wanted to be a glamour model. I aspire to be like Katie Price, and I actually have a boob-job booked for December.",
+					"np":"At first I wanted to be a forensic scientist, then a teacher, and then prime minster! I don't want to do any of those things now though..."
+				},
+				{
+					"j":"If I gave you £1,000,000 today, what would do with it?",
+					"p":"I would go on a massive shopping spree to get all the designer clothes I've always wanted.",
+					"np":"I would probably go a bit mad at first and treat all my family and friends, but then I'd be sensible and buy a big house and invest what's left over."
+				},
+				{
+					"j":"Your female best friend tries on a horrible outfit but she really likes it. Would you tell her the truth or let her wear it and not really care?",
+					"p":"I would tell her the truth. It would be unfair of me as a friend not to be honest with her and let her wear something that makes her look terrible.",
+					"np":"I would tell the truth, but in a nice way. I would suggest something else or say I preferred the other dress for example."
+				},
+				{
+					"j":"You're with a long-term partner and you've forgotten your anniversary. What do you do?",
+					"p":"Come clean and grovel. I'd make it up to him by planning a weekend that's all about the two of us (although really it would have to be all about HIM).",
+					"np":"I would NEVER FORGET! My relationship is too important to me."
+				}
+			]
+
+		}
+
+	]
+}

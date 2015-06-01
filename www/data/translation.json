@@ -1,0 +1,35 @@
+{
+	
+
+	"home-button-play-game" : {
+		"en": "Play Game"
+	},
+	"home-button-how-to-play" : {
+		"en": "How To Play"
+	},
+	"home-button-scoreboard" : {
+		"en": "Scoreboard"
+	},
+	"home-button-settings" : {
+		"en": "Settings"
+	},
+	"home-help-title" : {
+		"en": "Masquerade"
+	},
+	"home-help-text" : {
+		"en": "<p>Welcome to the game of Maquerade, this is the help secton.</p>"
+	},
+
+
+
+	"choose-questions-title": {
+		"en": "Select A Question About Being {CHARACTERISTIC}"
+	},
+	"enter-question-title": {
+		"en": "Enter A Question About Being {CHARACTERISTIC}",
+		"fr": "Title in french {CHARACTERISTIC}"
+	},
+	"enter-question-help-content":{
+		"en": "Think up questions that will tell you who is pretender and non-pretender. Personal questions to do with the particular players miss the point. Also try to avoid questions that can be answered by Google. Good questions are to do with feelings, experiences, typical opinions or false stereotypes. The game works best if the judge shares the characteristic."
+	}
+}
